@@ -1,0 +1,21 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "command": ".claude/setup.sh" }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(pandoc:*)",
+      "Bash(curl -X POST https://api.resend.com/*)",
+      "Bash(curl --request POST https://api.resend.com/*)",
+      "Bash(./send_briefing.sh:*)",
+      "Bash(.claude/setup.sh)"
+    ]
+  }
+}

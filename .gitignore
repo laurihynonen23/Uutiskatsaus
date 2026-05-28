@@ -1,0 +1,6 @@
+briefings/
+*.html
+*.pdf
+.env
+.env.local
+.DS_Store
