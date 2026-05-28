@@ -12,9 +12,8 @@
   "permissions": {
     "allow": [
       "Bash(pandoc:*)",
-      "Bash(curl -X POST https://api.resend.com/*)",
-      "Bash(curl --request POST https://api.resend.com/*)",
-      "Bash(./send_briefing.sh:*)",
+      "Bash(./send_briefing.py:*)",
+      "Bash(python3 send_briefing.py:*)",
       "Bash(.claude/setup.sh)"
     ]
   }

@@ -1,19 +1,27 @@
 # Uutiskatsaus
 
-Päivittäinen uutiskatsaus → HTML-sähköposti Resendin kautta.
+Päivittäinen uutiskatsaus → HTML-sähköposti Gmail SMTP:n kautta.
 
 ## Setup (kerran)
 
-1. **Resend-tili**: https://resend.com/signup (ilmainen, 100 viestiä/päivä)
-2. **API-avain**: Dashboard → API Keys → "Create API Key" → kopioi `re_xxx...`
-3. **Push tämä repo GitHubiin** ja yhdistä Claude Code on the web -ympäristöön
-4. **Environment variables** (Claude Code -dashboardissa):
-   - `RESEND_API_KEY` = `re_xxx...`
-   - `BRIEFING_RECIPIENT` = `miskahirvo@gmail.com`
-   - `BRIEFING_FROM` *(valinnainen)* = `"Uutiskatsaus <onboarding@resend.dev>"` (oletus)
+### 1. Google App Password
 
-> Lähettäjä `onboarding@resend.dev` toimii heti ilman domain-verifiointia.
-> Tuotantokäyttöön verifioi oma domain Resendissä ja vaihda `BRIEFING_FROM`.
+1. Päälle 2FA: https://myaccount.google.com/security → "2-Step Verification"
+2. Luo App Password: https://myaccount.google.com/apppasswords
+   - "App name": `Uutiskatsaus`
+   - Kopioi 16-merkkinen koodi (esim. `abcd efgh ijkl mnop`)
+
+### 2. Push GitHubiin
+
+Tämä repo on jo Githubissa: https://github.com/laurihynonen23/Uutiskatsaus
+
+### 3. Yhdistä Claude Code on the web
+
+1. https://claude.ai/code → New project → linkitä GitHub-repo
+2. Settings → Environment variables → lisää:
+   - `GMAIL_USER` = `lauri.hynonen@gmail.com`
+   - `GMAIL_APP_PASSWORD` = `abcd efgh ijkl mnop` (16-merkkinen app password)
+   - `BRIEFING_RECIPIENT` = `miskahirvo@gmail.com`
 
 ## Käyttö
 
@@ -21,17 +29,26 @@ Päivittäinen uutiskatsaus → HTML-sähköposti Resendin kautta.
 /uutiskatsaus
 ```
 
-Tämä:
-1. Hakee päivän uutiset WebSearchilla
-2. Kirjoittaa briiffin tiedostoon `briefings/uutiskatsaus_YYYY-MM-DD.md`
-3. Renderöi HTML-sähköpostin ja lähettää Resendin kautta
+1. WebSearch hakee päivän uutiset
+2. Briiffi kirjoitetaan tiedostoon `briefings/uutiskatsaus_YYYY-MM-DD.md`
+3. `send_briefing.py` renderöi HTML:n ja lähettää Gmail SMTP:llä
 
-## Ajastus (cron pilvessä)
-
-Aja Claude Code -routineksi:
+## Ajastus pilvessä
 
 ```
-/schedule create "Päivittäinen uutiskatsaus" --prompt "/uutiskatsaus" --cron "0 7 * * *" --tz Europe/Helsinki
+/schedule create "Päivittäinen uutiskatsaus" \
+  --prompt "/uutiskatsaus" \
+  --cron "0 7 * * *" \
+  --tz Europe/Helsinki
+```
+
+## Lokaali testaus
+
+```bash
+cp .env.example .env.local
+# täytä arvot .env.local-tiedostoon
+set -a && source .env.local && set +a
+./send_briefing.py briefings/uutiskatsaus_YYYY-MM-DD.md
 ```
 
 ## Rakenne
@@ -42,14 +59,7 @@ Aja Claude Code -routineksi:
   settings.json            # Hook + permissions
   commands/
     uutiskatsaus.md        # /uutiskatsaus slash-komento
-send_briefing.sh           # MD -> HTML -> Resend
-briefings/                 # Generoidut briiffit
-```
-
-## Lokaali testaus
-
-```bash
-export RESEND_API_KEY=re_xxx
-export BRIEFING_RECIPIENT=miskahirvo@gmail.com
-./send_briefing.sh briefings/uutiskatsaus_2026-05-28.md
+send_briefing.py           # MD -> HTML -> Gmail SMTP
+briefings/                 # Generoidut briiffit (gitignored)
+.env.example               # Env-muuttujamalli
 ```

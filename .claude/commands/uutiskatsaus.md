@@ -1,5 +1,5 @@
 ---
-description: Generate today's news briefing and email it as styled HTML to the configured recipient.
+description: Generate today's news briefing and email it as styled HTML via Gmail SMTP.
 ---
 
 You are a professional news analyst. Produce concise, structured daily news briefing — readable in 5–10 minutes — covering most important stories from past ~18 hours (previous evening + this morning).
@@ -48,5 +48,5 @@ If any outlet published notably unique interview, opinion piece, or angle not co
 
 1. Use WebSearch tool to gather today's news from listed sources
 2. Write briefing to `briefings/uutiskatsaus_YYYY-MM-DD.md` (create `briefings/` if missing)
-3. Send email: `./send_briefing.sh briefings/uutiskatsaus_YYYY-MM-DD.md`
+3. Send email: `./send_briefing.py briefings/uutiskatsaus_YYYY-MM-DD.md`
 4. Report send status to user
