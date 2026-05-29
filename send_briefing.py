@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """
-Render a Markdown briefing to HTML and send via Gmail SMTP.
+Render a Markdown briefing to HTML and send via Resend API.
 
 Usage:  ./send_briefing.py <briefing.md>
-Env:    GMAIL_USER, GMAIL_APP_PASSWORD, BRIEFING_RECIPIENT
-        (optional) BRIEFING_FROM_NAME  -- defaults to "Uutiskatsaus"
+Env:    RESEND_API_KEY, BRIEFING_RECIPIENT
+        (optional) BRIEFING_FROM  -- defaults to "Uutiskatsaus <onboarding@resend.dev>"
 """
+import json
 import os
 import re
-import smtplib
 import subprocess
 import sys
+import urllib.request
+import urllib.error
 from datetime import datetime
-from email.message import EmailMessage
 from pathlib import Path
 
 CSS = """
@@ -43,8 +44,8 @@ def require_env(name: str) -> str:
     return val
 
 
-def render_html(md_path: Path) -> tuple[str, str]:
-    body = subprocess.check_output(
+def render(md_path: Path) -> tuple[str, str]:
+    html = subprocess.check_output(
         ["pandoc", "-f", "markdown", "-t", "html5", "--wrap=none", str(md_path)],
         text=True,
     )
@@ -52,7 +53,7 @@ def render_html(md_path: Path) -> tuple[str, str]:
         ["pandoc", "-f", "markdown", "-t", "plain", "--wrap=preserve", str(md_path)],
         text=True,
     )
-    return body, text
+    return html, text
 
 
 def extract_title(md_path: Path) -> str:
@@ -90,35 +91,49 @@ def main() -> int:
     if not md_path.is_file():
         sys.exit(f"Error: {md_path} not found")
 
-    user = require_env("GMAIL_USER")
-    password = require_env("GMAIL_APP_PASSWORD")
+    api_key   = require_env("RESEND_API_KEY")
     recipient = require_env("BRIEFING_RECIPIENT")
-    from_name = os.environ.get("BRIEFING_FROM_NAME", "Uutiskatsaus")
+    from_addr = os.environ.get("BRIEFING_FROM", "Uutiskatsaus <onboarding@resend.dev>")
 
     title = extract_title(md_path)
-    body_html, text = render_html(md_path)
+    body_html, text = render(md_path)
     html = build_html(body_html, title)
 
     date_fi = datetime.now().strftime("%-d.%-m.%Y")
     subject = f"Uutiskatsaus – {date_fi}"
 
-    msg = EmailMessage()
-    msg["From"] = f"{from_name} <{user}>"
-    msg["To"] = recipient
-    msg["Subject"] = subject
-    msg.set_content(text)
-    msg.add_alternative(html, subtype="html")
+    payload = json.dumps({
+        "from": from_addr,
+        "to": [recipient],
+        "subject": subject,
+        "html": html,
+        "text": text,
+    }).encode()
 
-    print(f"[send] From:    {user}")
+    print(f"[send] From:    {from_addr}")
     print(f"[send] To:      {recipient}")
     print(f"[send] Subject: {subject}")
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-        smtp.login(user, password.replace(" ", ""))
-        smtp.send_message(msg)
+    req = urllib.request.Request(
+        "https://api.resend.com/emails",
+        data=payload,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "User-Agent": "uutiskatsaus/1.0",
+        },
+        method="POST",
+    )
 
-    print("[send] OK")
-    return 0
+    try:
+        with urllib.request.urlopen(req) as resp:
+            body = json.loads(resp.read())
+            print(f"[send] OK id={body.get('id')}")
+            return 0
+    except urllib.error.HTTPError as e:
+        err = e.read().decode()
+        print(f"[send] FAILED {e.code}: {err}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
