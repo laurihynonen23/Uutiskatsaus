@@ -20,10 +20,12 @@ CSS = """
   body { margin:0; padding:0; background:#f5f5f4; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color:#1c1917; line-height:1.55; }
   .wrap { max-width: 680px; margin: 0 auto; background:#ffffff; padding: 40px 48px; }
   h1 { font-size: 26px; font-weight: 700; margin: 0 0 8px; color:#0c0a09; letter-spacing:-0.01em; }
-  h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color:#57534e; margin: 0 0 16px; }
-  h3 { font-size: 18px; font-weight: 600; margin: 36px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #e7e5e4; color:#1c1917; }
-  h3:first-of-type { margin-top: 28px; }
+  h2 { font-size: 21px; font-weight: 700; margin: 40px 0 14px; padding-bottom: 10px; border-bottom: 2px solid #e7e5e4; color:#0c0a09; letter-spacing:-0.01em; }
+  h2:first-of-type { margin-top: 28px; }
+  h3 { font-size: 17px; font-weight: 600; margin: 28px 0 12px; color:#1c1917; }
   p { margin: 0 0 14px; font-size: 15px; }
+  em { color:#78716c; font-size: 13px; font-style: normal; }
+  em a { color:#0369a1; border-bottom: none; }
   ul { margin: 0 0 18px; padding-left: 22px; }
   li { margin-bottom: 12px; font-size: 15px; }
   li p { margin: 0 0 4px; }
