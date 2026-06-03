@@ -94,7 +94,7 @@ def main() -> int:
         sys.exit(f"Error: {md_path} not found")
 
     api_key   = require_env("RESEND_API_KEY")
-    recipient = require_env("BRIEFING_RECIPIENT")
+    recipients = [r.strip() for r in require_env("BRIEFING_RECIPIENT").split(",") if r.strip()]
     from_addr = os.environ.get("BRIEFING_FROM", "Uutiskatsaus <onboarding@resend.dev>")
 
     title = extract_title(md_path)
@@ -102,18 +102,18 @@ def main() -> int:
     html = build_html(body_html, title)
 
     date_fi = datetime.now().strftime("%-d.%-m.%Y")
-    subject = f"Uutiskatsaus – {date_fi}"
+    subject = f"Tiedustelukatsaus – {date_fi}"
 
     payload = json.dumps({
         "from": from_addr,
-        "to": [recipient],
+        "to": recipients,
         "subject": subject,
         "html": html,
         "text": text,
     }).encode()
 
     print(f"[send] From:    {from_addr}")
-    print(f"[send] To:      {recipient}")
+    print(f"[send] To:      {', '.join(recipients)}")
     print(f"[send] Subject: {subject}")
 
     req = urllib.request.Request(
