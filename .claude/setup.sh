@@ -1,15 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Minimal setup: only need pandoc for MD->HTML conversion.
-# curl is preinstalled. No PDF tooling needed.
-
+# Install pandoc if missing
 if ! command -v pandoc >/dev/null 2>&1; then
-  sudo apt-get install -y --no-install-recommends pandoc \
-    -o Dir::Etc::sourcelist="sources.list" \
-    -o Dir::Etc::sourceparts="-" \
-    -o APT::Get::List-Cleanup="0" 2>/dev/null || \
-  sudo apt-get install -y --no-install-recommends pandoc
+  sudo apt-get install -y --no-install-recommends pandoc 2>/dev/null || true
 fi
 
-echo "[setup] pandoc $(pandoc --version | head -1 | awk '{print $2}') ready"
+echo "[setup] ready (pandoc $(pandoc --version 2>/dev/null | head -1 | awk '{print $2}'))"

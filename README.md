@@ -1,55 +1,8 @@
 # Uutiskatsaus
 
-Päivittäinen uutiskatsaus → HTML-sähköposti Gmail SMTP:n kautta.
+Päivittäinen tiedustelukatsaus → HTML-sähköposti Resend API:n kautta.
 
-## Setup (kerran)
-
-### 1. Google App Password
-
-1. Päälle 2FA: https://myaccount.google.com/security → "2-Step Verification"
-2. Luo App Password: https://myaccount.google.com/apppasswords
-   - "App name": `Uutiskatsaus`
-   - Kopioi 16-merkkinen koodi (esim. `abcd efgh ijkl mnop`)
-
-### 2. Push GitHubiin
-
-Tämä repo on jo Githubissa: https://github.com/laurihynonen23/Uutiskatsaus
-
-### 3. Yhdistä Claude Code on the web
-
-1. https://claude.ai/code → New project → linkitä GitHub-repo
-2. Settings → Environment variables → lisää:
-   - `GMAIL_USER` = `lauri.hynonen@gmail.com`
-   - `GMAIL_APP_PASSWORD` = `abcd efgh ijkl mnop` (16-merkkinen app password)
-   - `BRIEFING_RECIPIENT` = `miskahirvo@gmail.com`
-
-## Käyttö
-
-```
-/uutiskatsaus
-```
-
-1. WebSearch hakee päivän uutiset
-2. Briiffi kirjoitetaan tiedostoon `briefings/uutiskatsaus_YYYY-MM-DD.md`
-3. `send_briefing.py` renderöi HTML:n ja lähettää Gmail SMTP:llä
-
-## Ajastus pilvessä
-
-```
-/schedule create "Päivittäinen uutiskatsaus" \
-  --prompt "/uutiskatsaus" \
-  --cron "0 7 * * *" \
-  --tz Europe/Helsinki
-```
-
-## Lokaali testaus
-
-```bash
-cp .env.example .env.local
-# täytä arvot .env.local-tiedostoon
-set -a && source .env.local && set +a
-./send_briefing.py briefings/uutiskatsaus_YYYY-MM-DD.md
-```
+Lähetetään joka aamu klo 06:30 Helsinki-aikaa (UTC `30 3 * * *`).
 
 ## Rakenne
 
@@ -59,7 +12,49 @@ set -a && source .env.local && set +a
   settings.json            # Hook + permissions
   commands/
     uutiskatsaus.md        # /uutiskatsaus slash-komento
-send_briefing.py           # MD -> HTML -> Gmail SMTP
+send_briefing.py           # MD → HTML → Resend API
 briefings/                 # Generoidut briiffit (gitignored)
-.env.example               # Env-muuttujamalli
+```
+
+## Setup uudelle käyttäjälle
+
+### 1. Resend
+
+1. Luo tili: https://resend.com
+2. Verifioi domain tai käytä jaettua `fyxio.fi`-osoitetta (kysy Laurilta API-avain)
+3. Kopioi API-avain
+
+### 2. Claude Code on the web
+
+1. https://claude.ai/code → New project → linkitä tämä repo
+2. Settings → Environment → **Network Access: Full** (pakollinen Resend API:lle)
+3. Luo rutiini:
+   - **Model:** `claude-opus-4-8`
+   - **Cron:** `30 3 * * *` (= 06:30 Helsinki EEST)
+   - **Prompt:** katso alla
+
+### 3. Rutiinin prompt (VAIHE 0 -kohta)
+
+Vaihda `RESEND_API_KEY` ja `BRIEFING_RECIPIENT` omiksi:
+
+```bash
+export RESEND_API_KEY=<oma-avain>
+export BRIEFING_RECIPIENT='sinun@email.com'
+export BRIEFING_FROM='Tiedustelukatsaus <uutiset@fyxio.fi>'
+which pandoc || sudo apt-get install -y --no-install-recommends pandoc
+mkdir -p briefings
+```
+
+## Lokaali testaus
+
+```bash
+set -a && source .env.local && set +a
+python3 send_briefing.py briefings/uutiskatsaus_YYYY-MM-DD.md
+```
+
+`.env.local` (ei commitoida):
+```
+RESEND_API_KEY=...
+BRIEFING_RECIPIENT=sinun@email.com
+BRIEFING_FROM=Tiedustelukatsaus <uutiset@fyxio.fi>
 ```
