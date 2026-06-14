@@ -1,6 +1,16 @@
-briefings/
-*.html
-*.pdf
+node_modules/
 .env
 .env.local
 .DS_Store
+briefings/
+# build artifacts (root only)
+/report.html
+/preview.pdf
+/*.html
+# local preview/test renders
+prev_*.png
+chk_*.png
+big*.png
+_min.*
+maps/*_real.png
+# NOTE: reports/*.pdf and maps/*.png ovat tarkoituksella mukana versionhallinnassa

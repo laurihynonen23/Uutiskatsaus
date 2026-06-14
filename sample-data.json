@@ -1,0 +1,184 @@
+{
+  "date": "6. kesäkuuta 2026",
+  "dateISO": "2026-06-06",
+  "time": "19:59 EEST",
+  "footer": "SIVIILI / ANALYYTTINEN KATSAUS",
+  "cover": {
+    "eyebrow": "SIVIILI / ANALYYTTINEN KATSAUS · EI LUOKITELTU",
+    "title": "Päivittäinen tiedustelukatsaus",
+    "subtitle": "Strateginen tilannekuva päätöksenteon tueksi"
+  },
+  "exec": {
+    "ydin": "Kolme aktiivista rintamaa kytkeytyy yhä tiiviimmin yhteen. Iranin–Israelin/USA:n sota pitää Hormuzinsalmen suljettuna ja öljyn riskipreemion korkealla, mikä heijastuu suoraan Euroopan inflaatioon ja Suomen energiaturvallisuuteen. Ukrainassa Venäjän eteneminen on hidastunut rakenteellisesti, mutta paine Donbasissa jatkuu.",
+    "points": [
+      "<span class=\"warn\">⚠</span> Hormuz suljettu jo kolmatta kuukautta. Iran laukaisi 6.6. aamuyöllä drooneja salmeen; noin viidennes maailman öljystä kulkee tästä pullonkaulasta, ja Brent on noussut ~98 dollariin tynnyriltä.",
+      "Ukrainan rintama hidastunut, ei pysähtynyt. ISW:n mukaan Venäjä menetti toukokuussa enemmän hallintaa kuin valtasi; silti Pokrovskin suunnalla käytiin 273 taistelukosketusta vuorokaudessa.",
+      "Gazan tulitauko rapautuu. Lokakuun 2025 tulitauosta huolimatta arviolta ~900 palestiinalaista on kuollut; Trumpin 20-kohdan suunnitelman 2. vaihe on jumissa Hamasin aseistariisunnasta.",
+      "Markkinat hinnoittelevat geopolitiikkaa. S&P 500:n ennätysputki katkesi ja Dow putosi 620 pistettä, kun öljyn nousu herätti uudelleen inflaatiopelot.",
+      "Suomessa turvallisuus korostuu. Itäraja pidetään suljettuna ja toinen lisätalousarvio painottaa puolustusta — samalla EU:n alijäämämenettely kiristää finanssipolitiikkaa."
+    ]
+  },
+  "conflicts": [
+    {
+      "n": 1,
+      "name": "Ukraina — rintamatilanne",
+      "map": "maps/ukraina.png",
+      "mapSource": "Karttalähde: ISW / DeepState (skemaattinen)",
+      "reliability": "Keskikorkea",
+      "relClass": "keski",
+      "changes": [
+        "Rintamalla 273 taistelukosketusta vuorokaudessa; kovin paine Pokrovskin ja Huliaipolen suuntiin.",
+        "Ilmapuolustus torjui yössä 4.→5.6. yhteensä 198 venäläistä droonia; Sumin alueella kuoli silti 2 siviiliä.",
+        "Laaja ohjus- ja drooni-isku Kiovaan ja muihin kaupunkeihin — alustavasti 2 kuollutta.",
+        "Venäjän budjettialijäämä oli 4,58 bilj. ruplaa jo Q1/2026, yli koko vuoden suunnitelman."
+      ],
+      "assessment": [
+        "Tempon lasku viittaa Venäjän reservien ja logistiikan ehtymiseen pikemmin kuin kausivaihteluun.",
+        "Seuraavan 72 h aikana todennäköisintä ovat paikalliset työnnöt Pokrovskissa ilman läpimurtoa.",
+        "Huomionarvoista: budjettipaine voi pakottaa Venäjän valitsemaan rintaman ja kotirintaman välillä."
+      ]
+    },
+    {
+      "n": 2,
+      "name": "Iran — Hormuzinsalmi ja alueellinen sota",
+      "map": "maps/iran.png",
+      "mapSource": "Karttalähde: ISW / OpenStreetMap (skemaattinen)",
+      "reliability": "Keskikorkea",
+      "relClass": "keski",
+      "changes": [
+        "<span class=\"warn\">⚠</span> Iran laukaisi 6.6. aamuyöllä drooneja salmeen; kohteiksi epäiltiin kauppa-aluksia ja US-joukkoja.",
+        "<span class=\"warn\">⚠</span> Iran perusti \"Persianlahden salmiviranomaisen\" säätelemään läpikulkua ja vakiinnuttamaan otteensa väylästä.",
+        "Trumpin mukaan (5.6.) Iranilla on jäljellä enää –21–22 % sotaa edeltäneestä ohjusvarastosta.",
+        "<span class=\"warn\">⚠</span> Iran keskeytti yhteistyönsä IAEA:n kanssa vedoten Israelin toimiin Libanonissa ja Gazassa."
+      ],
+      "assessment": [
+        "Salmen pitkittyvä häiriö siirtää öljyn hintaan pysyvän riskipreemion ja pakottaa Euroopan inflaatioon.",
+        "\"Salmiviranomainen\" on yritys muuttaa väylän kansainvälinen status — seurattava ennakkotapaus."
+      ]
+    },
+    {
+      "n": 3,
+      "name": "Gaza / Israel / Libanon",
+      "map": "maps/gaza.png",
+      "mapSource": "Karttalähde: OCHA / OpenStreetMap (skemaattinen)",
+      "reliability": "Keskikorkea",
+      "relClass": "keski",
+      "changes": [
+        "Lokakuun 2025 tulitauko rapautuu; arviolta ~900 palestiinalaista kuollut sen jälkeen.",
+        "<span class=\"warn\">⚠</span> Israelin ja Hizbollahin välillä toistuvia iskuja Etelä-Libanonissa.",
+        "Humanitaarinen tilanne kriittinen; avustusperillepääsy yhä rajoitettua."
+      ],
+      "assessment": [
+        "Tulitauon 2. vaihe (Hamasin aseistariisunta) jumissa — paluu laajamittaisiin taisteluihin mahdollinen.",
+        "Libanonin rintama voi avata toisen rintaman ja vetää Iranin proxy-verkostot mukaan."
+      ]
+    }
+  ],
+  "emerging": {
+    "cards": [
+      {
+        "name": "Sudan",
+        "tag": "Kriittinen",
+        "level": "kriittinen",
+        "lede": "Maailman pahin humanitaarinen kriisi syvenee.",
+        "points": [
+          "Sisällissota: 150 000+ kuollut, ~11,5 milj. siirtynyt, 33,7 milj. avuntarpeessa.",
+          "CFR pitää eskalaatiota 2026 todennäköisimpänä skenaariona — massamurhariski ja vuoto naapureihin."
+        ]
+      },
+      {
+        "name": "Sahel",
+        "tag": "Kohonnut",
+        "level": "kohonnut",
+        "lede": "Jihadistivyöhyke laajenee Saharan eteläpuolella.",
+        "points": [
+          "Osittainen Bamakon (Mali) saarto syyskuusta — uusi vaihe alueen sodassa.",
+          "Kytkös toimitusketjuihin (uraani, kulta) ja EU/Venäjä-kilpailuun vaikutusvallasta."
+        ]
+      },
+      {
+        "name": "Taiwan",
+        "tag": "Seurattava",
+        "level": "seurattava",
+        "lede": "Suurvaltakonfliktin vaarallisin yksittäinen liekinlähde.",
+        "points": [
+          "Kiinan sotilaallinen ja taloudellinen paine kasvaa Iran-sodan varjossa.",
+          "CFR: ≥50 % kriisitodennäköisyys 2026, korkea vaikutus US-intresseihin ja puolijohteisiin."
+        ]
+      }
+    ],
+    "criteria": "valtiollinen/puolivaltiollinen aseellinen toimija · &gt; 100 taistelukuolemaa / 30 pv tai vahva eskalaatiopotentiaali · kytkös Suomeen, EU:hun, NATOon tai globaaleihin toimitusketjuihin"
+  },
+  "alert": {
+    "eyebrow": "Analyytikon huomio",
+    "title": "Hormuz-öljyshokki — kohonnut eskalaatioriski",
+    "stats": [
+      { "v": "97,81", "l": "USD / tnl · Brent", "s": "+1,89 % · WTI 96,02 USD (+2,41 %)" },
+      { "v": "~20%", "l": "maailman öljystä", "s": "kulkee Hormuzinsalmen kautta" }
+    ],
+    "points": [
+      "Iranin drooni-iskut salmeen 6.6. ja uusi \"salmiviranomainen\" nostavat öljyn pysyvää riskipreemiota; häiriö on jatkunut helmikuusta.",
+      "Vaikutus Suomeen on suora: polttoaine- ja energiahinnat, tuontihintainflaatio ja paine EKP:n korkolinjaan.",
+      "Seurattavat signaalit: aluskuljetusten määrä salmessa, US Navyn saattuetoiminta sekä Iranin ohjus- ja droonivaraston taso."
+    ],
+    "kehotus": "Strateginen kehotus: priorisoi energiavarautuminen ja toimitusketjujen herkkyysanalyysi seuraavan 72 h ajan."
+  },
+  "trending": [
+    {
+      "eyebrow": "Uutisnostot · 24 h",
+      "title": "Maailma — kansainvälinen politiikka",
+      "items": [
+        { "h": "Trump–Xi-huippukokous jätti Pekingille yliotteen.", "p": "Toukokuun 14.–15. kokouksen jälkeen vallitsee epävarma liennytys, jossa kauppa, Taiwan ja Iran-sota painavat — analyytikkojen mukaan Kiinan eduksi." },
+        { "h": "EU kiristi Kiina-pakotteita.", "p": "Unioni asetti vientirajoituksia 58 kiinalais- ja hongkongilaistoimijalle mm. drone-komponenttien ja mikroelektroniikan toimittamisesta Venäjälle." },
+        { "h": "Britannia laajensi Venäjä-pakotteita.", "p": "26.5. uusi paketti kohdistui kryptopörsseihin ja salaisen rahoituksen verkostoihin; listalle lisättiin 85 henkilöä ja yhteisöä." },
+        { "h": "Kiina kantaa Venäjän sotataloutta.", "p": "Kiinan arvioidaan toimittavan ~90 % Venäjän kaksikäyttöteknologiasta — Ukraina ei pidä Kiinaa puolueettomana osapuolena." }
+      ],
+      "side": {
+        "title": "Suomi",
+        "points": [
+          "Itäraja pidetään suljettuna (valtioneuvoston päätös).",
+          "Toinen lisätalousarvio painottaa puolustusta, työllisyyttä ja maahanmuuttoa; EU:n alijäämämenettely kiristää.",
+          "Hybridiuhkia koskeva perustuslakimuutos kaatui SDP:n vastustukseen."
+        ]
+      }
+    },
+    {
+      "eyebrow": "Uutisnostot · 24 h",
+      "title": "Teknologia — disruptiiviset signaalit",
+      "items": [
+        { "h": "Microsoft esitteli tekoälyn suunnitteleman kvanttisirun.", "p": "Majorana 2 -sirun eräissä ominaisuuksissa tuhatkertainen parannus; yhtiö lupaa kaupallisesti hyödyllisiä kvanttikoneita jo 2029." },
+        { "h": "Valolla toimiva siru lupaa energiatehokasta laskentaa.", "p": "Uusi komponentti tuottaa, ohjaa ja lukee valoa samassa sirussa — askel vähän energiaa vievään AI- ja kvanttilaskentaan." },
+        { "h": "Fotoninen kvanttilaskenta nopeutuu.", "p": "QuiX Quantumin reaaliaikainen ohjausyksikkö (150 ns viive) mahdollistaa mittauspohjaisen kvanttilaskennan skaalaamisen HPC-ympäristöihin." },
+        { "h": "Yhdysvaltain AI-asetus linjasi turvatestauksen.", "p": "2.6. annettu asetus tuo vapaaehtoisen mallien turvatestauksen ja perustaa AI-kyberselvityskeskuksen; kaksikäyttöteknologia korostuu." }
+      ],
+      "side": {
+        "title": "Markkinat",
+        "points": [
+          "S&P 500:n ennätysputki (7 600) katkesi; Dow -620 pistettä öljyn noustessa.",
+          "Brent 97,81 USD (+1,89 %), WTI 96,02 USD (+2,41 %) — Iran-riski.",
+          "Sijoittajat hakeutuvat turvasatamiin; Nvidia kannattelee teknologiaa."
+        ]
+      }
+    }
+  ],
+  "sources": {
+    "rows": [
+      { "src": "ISW (Institute for the Study of War)", "use": "Ukraina-analyysi", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "Reuters / AP", "use": "Uutiset ja vahvistus", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "RFE/RL", "use": "Iran / Hormuz", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "UN Press / OCHA", "use": "Gaza, humanitaarinen", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "YLE / Valtioneuvosto", "use": "Suomi-uutiset", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "CFR / ACLED", "use": "Konfliktiriskiarviot", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "ScienceDaily / Bloomberg", "use": "Teknologia, kvantti/AI", "rel": "Keskikorkea", "relClass": "keski" },
+      { "src": "Al Jazeera / CNN (live)", "use": "Lähi-itä, reaaliaika", "rel": "Keskikorkea", "relClass": "keski" },
+      { "src": "OpenStreetMap (ODbL)", "use": "Karttapohjat", "rel": "Korkea", "relClass": "korkea" }
+    ],
+    "legend": [
+      { "term": "✓ Vahvistettu", "desc": "useampi riippumaton lähde" },
+      { "term": "⚠ Vahvistamaton", "desc": "yksittäinen / kehittyvä tieto" },
+      { "term": "Korkea", "desc": "Vakiintunut, jäljitettävä lähde", "swatch": "#4A6B3A" },
+      { "term": "Keskikorkea", "desc": "OSINT / reaaliaikainen, ristiintarkistettava", "swatch": "#3E5C76" },
+      { "term": "Matala", "desc": "Varauksella tulkittava", "swatch": "#A8412F" }
+    ]
+  }
+}

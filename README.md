@@ -1,60 +1,52 @@
-# Uutiskatsaus
+# Tiedustelukatsaus — päivittäinen siviilitiedusteluraportti
 
-Päivittäinen tiedustelukatsaus → HTML-sähköposti Resend API:n kautta.
+Lukittu **HTML/CSS-generaattori**, joka tuottaa PowerPoint-briiffaustyylisen PDF:n.
+Design on koodissa (yksi totuuden lähde) → ulkonäkö on **aina sama**, vain sisältö vaihtuu.
 
-Lähetetään joka aamu klo 06:30 Helsinki-aikaa (UTC `30 3 * * *`).
+## Iterointi (design)
+
+Muokkaa ulkonäköä **luomatta uutta raporttia**:
+
+```bash
+npm install            # kerran (Chromium puppeteerin mukana)
+./preview.sh           # rakentaa preview.pdf NÄYTEdatalla ja avaa sen
+```
+
+- **Värit / fontit / mitat:** [`theme.css`](theme.css) — design-tokenit.
+- **Diapohjat / asettelu:** [`report.css`](report.css).
+- **Diarakenne / mitä kenttiä:** [`template.js`](template.js).
+- **Näytesisältö previewille:** [`sample-data.json`](sample-data.json).
+
+Muokkaa CSS:ää → aja `./preview.sh` → katso `preview.pdf`. Ei uutisten hakua, ei karttoja netistä — sekunneissa valmis.
+
+## Tuotanto (päivittäinen ajo)
+
+Rutiini (claude.ai/code) tekee joka aamu:
+
+1. Hakee päivän uutiset web-hauilla.
+2. Kirjoittaa päivän sisällön: `data/uutiskatsaus_VVVVKKPP.json` (sama skeema kuin `sample-data.json`).
+3. Renderöi konfliktikartat: `python3 render_map.py <spec.json>` → `maps/*.png` (OSM-pohja + overlay).
+4. Rakentaa PDF:n: `node build.js --data data/uutiskatsaus_VVVVKKPP.json --out reports/tiedustelukatsaus_VVVVKKPP.pdf`
+5. Lähettää PDF:n sähköpostilla liitteenä (Resend) ja committaa sen repoon.
 
 ## Rakenne
 
-```
-.claude/
-  setup.sh                 # SessionStart: asentaa pandocin
-  settings.json            # Hook + permissions
-  commands/
-    uutiskatsaus.md        # /uutiskatsaus slash-komento
-send_briefing.py           # MD → HTML → Resend API
-briefings/                 # Generoidut briiffit (gitignored)
-```
+| Tiedosto | Vastuu |
+|---|---|
+| `theme.css` | Design-tokenit (värit, fontit, mitat) |
+| `report.css` | Kaikkien diatyyppien asettelu (ylivuotosuojattu flexillä) |
+| `template.js` | `data.json` → HTML |
+| `build.js` | `data.json` → `report.html` → PDF (Chrome/puppeteer) |
+| `render_map.py` | Karttaspeksi → PNG (OSM-tiilet + hallinta-alueet, kaupungit, rintamalinja) |
+| `sample-data.json` | Kiinteä näytesisältö previewiä varten |
+| `fonts/` | Bundlatut woff2 (Playfair Display, Lora, Inter) — identtinen renderöinti kaikkialla |
 
-## Setup uudelle käyttäjälle
+## Diatyypit
 
-### 1. Resend
+Kansi · Executive Summary · konfliktidiat (kartta + analyysi) · nousevat kriisit (3 korttia) ·
+analyytikon huomio (valinnainen) · trending (1–2 diaa) · lähteet & luotettavuusarviot.
 
-1. Luo tili: https://resend.com
-2. Verifioi domain tai käytä jaettua `fyxio.fi`-osoitetta (kysy Laurilta API-avain)
-3. Kopioi API-avain
+## Tyyli
 
-### 2. Claude Code on the web
-
-1. https://claude.ai/code → New project → linkitä tämä repo
-2. Settings → Environment → **Network Access: Full** (pakollinen Resend API:lle)
-3. Luo rutiini:
-   - **Model:** `claude-opus-4-8`
-   - **Cron:** `30 3 * * *` (= 06:30 Helsinki EEST)
-   - **Prompt:** katso alla
-
-### 3. Rutiinin prompt (VAIHE 0 -kohta)
-
-Vaihda `RESEND_API_KEY` ja `BRIEFING_RECIPIENT` omiksi:
-
-```bash
-export RESEND_API_KEY=<oma-avain>
-export BRIEFING_RECIPIENT='sinun@email.com'
-export BRIEFING_FROM='Tiedustelukatsaus <uutiset@fyxio.fi>'
-which pandoc || sudo apt-get install -y --no-install-recommends pandoc
-mkdir -p briefings
-```
-
-## Lokaali testaus
-
-```bash
-set -a && source .env.local && set +a
-python3 send_briefing.py briefings/uutiskatsaus_YYYY-MM-DD.md
-```
-
-`.env.local` (ei commitoida):
-```
-RESEND_API_KEY=...
-BRIEFING_RECIPIENT=sinun@email.com
-BRIEFING_FROM=Tiedustelukatsaus <uutiset@fyxio.fi>
-```
+"Editoriaali / tiedustelubriiffi": vaalea kerma tausta, navy-sivupalkit, punainen + kulta aksentit,
+serif-otsikot (Playfair/Lora). **Ei** tummaa navy-täystaustaa sisältödioilla, **ei** SVG-laatikoita karttoina.

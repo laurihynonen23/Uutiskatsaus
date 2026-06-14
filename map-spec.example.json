@@ -1,0 +1,31 @@
+{
+  "_comment": "Esimerkki render_map.py:n syötteestä. Aja: python3 render_map.py map-spec.example.json",
+  "out": "maps/ukraina.png",
+  "size": [900, 760],
+  "bbox": [29.5, 46.0, 41.0, 51.6],
+  "title": "ITÄ-UKRAINA — rintama-arvio",
+  "date": "6.6.2026",
+  "source": "Karttalähde: ISW / DeepState · © OpenStreetMap-avustajat",
+  "control": [
+    {
+      "polygon": [[41.0, 51.6], [36.6, 50.2], [37.4, 48.3], [35.0, 47.6], [38.5, 46.0], [41.0, 46.0]],
+      "color": "#A8412F",
+      "alpha": 80,
+      "label": "Venäjän hallinta"
+    }
+  ],
+  "frontline": [[36.6, 50.2], [37.4, 48.3], [35.0, 47.6], [38.5, 46.0]],
+  "cities": [
+    { "name": "Kyiv", "lon": 30.52, "lat": 50.45 },
+    { "name": "Sumy", "lon": 34.80, "lat": 50.91 },
+    { "name": "Kharkiv", "lon": 36.23, "lat": 49.99 },
+    { "name": "Pokrovsk", "lon": 37.18, "lat": 48.28 },
+    { "name": "Zaporizhzhia", "lon": 35.14, "lat": 47.84 },
+    { "name": "Huliaipole", "lon": 36.26, "lat": 47.66 }
+  ],
+  "legend": [
+    { "color": "#3E5C76", "label": "Ukrainan hallinta" },
+    { "color": "#A8412F", "label": "Venäjän hallinta" },
+    { "color": "#A8412F", "label": "Rintamalinja (arvio)", "line": true }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "tiedustelukatsaus",
+  "version": "1.0.0",
+  "description": "Päivittäinen siviilitiedusteluraportti — lukittu HTML/CSS-generaattori (PDF)",
+  "type": "commonjs",
+  "scripts": {
+    "preview": "node build.js --data sample-data.json --out preview.pdf",
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  }
+}

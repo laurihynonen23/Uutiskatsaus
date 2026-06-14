@@ -1,0 +1,158 @@
+/* ============================================================
+   report.css — LAYOUT for all slide types
+   Tokens tulevat theme.css:stä. Yksi <section class="slide ..."> = yksi sivu.
+   ============================================================ */
+
+@page { size: 1280px 720px; margin: 0; }
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:var(--cream); }
+body{ font-family:var(--sans); color:var(--body); -webkit-font-smoothing:antialiased; }
+
+.slide{
+  position:relative; width:var(--slide-w); height:var(--slide-h);
+  background:var(--cream); padding:48px var(--pad) 74px;
+  overflow:hidden; page-break-after:always; break-after:page;
+  display:flex; flex-direction:column;
+}
+.slide:last-child{ page-break-after:auto; }
+/* header atoms keep natural height; the main content area grows and clips */
+.slide > .eyebrow, .slide > .title, .slide > .rule, .slide > .critbar{ flex:0 0 auto; }
+.cols{ flex:1 1 auto; min-height:0; }
+
+/* ---------- shared atoms ---------- */
+.eyebrow{
+  font-family:var(--sans); font-weight:700; font-size:13px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--red); display:flex; align-items:center; gap:11px;
+}
+.eyebrow::before{ content:""; width:11px; height:11px; background:var(--navy); display:inline-block; }
+.eyebrow.on-dark{ color:#C9B79A; } .eyebrow.on-dark::before{ background:var(--red); }
+
+.title{ font-family:var(--display); font-weight:700; color:var(--ink);
+  font-size:46px; line-height:1.02; margin:10px 0 0; letter-spacing:-.01em; }
+.title.sm{ font-size:38px; }
+.rule{ height:2px; background:var(--line-strong); margin:18px 0 22px; }
+
+.foot{
+  position:absolute; left:var(--pad); right:var(--pad); bottom:20px; height:var(--footer-h);
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:var(--sans); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--muted); border-top:1px solid var(--line); padding-top:8px;
+}
+
+.sq{ color:var(--red); } /* small marker */
+
+/* ---------- COVER ---------- */
+.cover{ background:var(--navy); color:#F3EEE3; display:flex; flex-direction:column;
+  justify-content:center; align-items:flex-start; padding:96px var(--pad); }
+.cover::before, .cover::after{ content:""; position:absolute; left:0; right:0; height:6px; }
+.cover::before{ top:0; background:var(--red); }
+.cover::after{ bottom:0; background:var(--blue); }
+.cover .eyebrow{ color:#9FB4C9; letter-spacing:.28em; }
+.cover .eyebrow::before{ background:var(--red); }
+.cover h1{ font-family:var(--display); font-weight:900; font-size:88px; line-height:.98;
+  margin:26px 0 0; color:#F6F1E7; letter-spacing:-.015em; max-width:1050px; }
+.cover .sub{ font-family:var(--serif); font-style:italic; font-size:27px; color:#A9BACb;
+  margin-top:20px; }
+.cover .meta{ position:absolute; left:var(--pad); right:var(--pad); bottom:54px;
+  display:flex; justify-content:space-between; align-items:flex-end; }
+.cover .meta .k{ font-family:var(--sans); font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  color:#7E93A8; display:block; margin-bottom:6px; }
+.cover .meta .v{ font-family:var(--serif); font-weight:700; font-size:24px; color:#EDE6D8; }
+
+/* ---------- EXECUTIVE SUMMARY ---------- */
+.exec .cols{ display:grid; grid-template-columns:340px 1fr; gap:38px; }
+.ydin{ background:var(--navy); color:#E7DECF; padding:30px 28px; position:relative;
+  border-top:5px solid var(--red); }
+.ydin h3{ font-family:var(--sans); font-weight:700; font-size:13px; letter-spacing:.2em;
+  text-transform:uppercase; color:#9FB4C9; margin:0 0 16px; }
+.ydin p{ font-family:var(--serif); font-size:17px; line-height:1.5; margin:0; color:#E9E1D2; }
+.keypoints{ display:flex; flex-direction:column; justify-content:space-between; }
+.kp{ display:grid; grid-template-columns:62px 1fr; gap:14px; padding:9px 0;
+  border-bottom:1px solid var(--line); align-items:start; }
+.kp:last-child{ border-bottom:0; }
+.kp .n{ font-family:var(--display); font-weight:700; font-size:42px; color:var(--gold); line-height:.9; }
+.kp .t{ font-size:14.5px; line-height:1.4; color:var(--body); align-self:center; }
+.kp .t .warn{ color:var(--red); font-weight:700; }
+
+/* ---------- CONFLICT (map + analysis) ---------- */
+.conflict .cols{ display:grid; grid-template-columns:520px 1fr; gap:34px; }
+.mapwrap{ display:flex; flex-direction:column; min-height:0; }
+.mapwrap img{ width:100%; flex:1 1 auto; min-height:0; object-fit:cover; border:1px solid var(--line-strong); }
+.mapcap{ font-family:var(--sans); font-size:11px; color:var(--muted); margin-top:8px;
+  display:flex; justify-content:space-between; gap:10px; }
+.rel{ font-weight:700; } .rel.korkea{color:var(--green);} .rel.keski{color:var(--blue);} .rel.matala{color:var(--red);}
+.analysis{ display:flex; flex-direction:column; gap:20px; overflow:hidden; }
+.sec h4{ font-family:var(--sans); font-weight:700; font-size:13px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--navy); margin:0 0 12px; display:flex; align-items:center; gap:9px; }
+.sec h4::before{ content:""; width:9px; height:9px; background:var(--red); display:inline-block; }
+.sec ul{ margin:0; padding:0; list-style:none; }
+.sec li{ font-size:14px; line-height:1.42; margin-bottom:9px; padding-left:18px; position:relative; color:var(--body); }
+.sec li::before{ content:"›"; position:absolute; left:0; color:var(--red); font-weight:700; }
+.sec li .ok{ color:var(--green); font-weight:700; } .sec li .warn{ color:var(--red); font-weight:700; }
+
+/* ---------- EMERGING (3 cards) ---------- */
+.emerging .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; flex:1 1 auto; min-height:0; margin-top:6px; }
+.card{ background:#FBF8F1; border:1px solid var(--line); padding:26px 24px; position:relative;
+  display:flex; flex-direction:column; }
+.card::before{ content:""; position:absolute; top:0; left:0; right:0; height:5px; }
+.card.kriittinen::before{ background:var(--red); } .card.kohonnut::before{ background:var(--gold); }
+.card.seurattava::before{ background:var(--blue); }
+.card .hd{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px; }
+.card h3{ font-family:var(--display); font-weight:700; font-size:30px; color:var(--ink); margin:0; }
+.card .tag{ font-family:var(--sans); font-weight:700; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; }
+.card.kriittinen .tag{color:var(--red);} .card.kohonnut .tag{color:var(--gold);} .card.seurattava .tag{color:var(--blue);}
+.card .lede{ font-family:var(--serif); font-style:italic; font-size:15px; line-height:1.4; color:var(--muted); margin:0 0 16px; }
+.card ul{ margin:0; padding:0; list-style:none; }
+.card li{ font-size:13.5px; line-height:1.4; margin-bottom:11px; padding-left:16px; position:relative; }
+.card li::before{ content:"›"; position:absolute; left:0; color:inherit; font-weight:700; }
+.card.kriittinen li::before{color:var(--red);} .card.kohonnut li::before{color:var(--gold);} .card.seurattava li::before{color:var(--blue);}
+.critbar{ margin-top:20px; background:var(--cream-2); padding:13px 20px; font-size:12.5px; color:var(--body); line-height:1.4; }
+.critbar b{ color:var(--ink); }
+
+/* ---------- ALERT ---------- */
+.alert{ padding:0; }
+.alert .band{ background:var(--red); color:#F6EFE6; padding:30px var(--pad) 26px; display:flex; align-items:center; gap:22px; }
+.alert .band .ico{ font-size:46px; line-height:1; }
+.alert .band .eyebrow{ color:#F2D6C9; } .alert .band .eyebrow::before{ background:#F6EFE6; }
+.alert .band h1{ font-family:var(--display); font-weight:700; font-size:40px; margin:6px 0 0; color:#FBF6EE; line-height:1.04; }
+.alert .body{ padding:34px var(--pad); display:grid; grid-template-columns:260px 1fr; gap:34px; flex:1 1 auto; min-height:0; align-content:center; }
+.bignum{ display:flex; flex-direction:column; gap:18px; }
+.stat{ background:#FBF8F1; border:1px solid var(--line); padding:20px 22px; text-align:left; }
+.stat .v{ font-family:var(--display); font-weight:900; font-size:58px; color:var(--gold); line-height:.9; }
+.stat .l{ font-family:var(--sans); font-weight:700; font-size:13px; margin-top:8px; color:var(--ink); }
+.stat .s{ font-size:12px; color:var(--muted); margin-top:4px; }
+.alert .body ul{ margin:0; padding:0; list-style:none; align-self:center; }
+.alert .body li{ font-size:15px; line-height:1.45; margin-bottom:13px; padding-left:18px; position:relative; }
+.alert .body li::before{ content:"›"; position:absolute; left:0; color:var(--red); font-weight:700; }
+.kehotus{ flex:0 0 auto; margin:0 var(--pad) 54px;
+  background:var(--cream-2); border-left:5px solid var(--red); padding:16px 22px;
+  font-family:var(--serif); font-style:italic; font-size:16px; color:var(--ink); }
+
+/* ---------- TRENDING ---------- */
+.trending .cols{ display:grid; grid-template-columns:1fr 320px; gap:36px; }
+.feed{ display:flex; flex-direction:column; }
+.item{ padding:13px 0; border-bottom:1px solid var(--line); }
+.item:last-child{ border-bottom:0; }
+.item h4{ font-family:var(--sans); font-weight:700; font-size:16px; color:var(--ink); margin:0 0 4px; }
+.item p{ font-size:13.5px; line-height:1.4; color:var(--body); margin:0; }
+.sidebox{ background:#FBF8F1; border:1px solid var(--line-strong); padding:26px 24px; }
+.sidebox h3{ font-family:var(--display); font-weight:700; font-size:26px; color:var(--ink); margin:0 0 18px; }
+.sidebox ul{ margin:0; padding:0; list-style:none; }
+.sidebox li{ font-size:13.5px; line-height:1.4; margin-bottom:14px; padding-left:16px; position:relative; color:var(--body); }
+.sidebox li::before{ content:""; position:absolute; left:0; top:6px; width:8px; height:8px; background:var(--navy); }
+
+/* ---------- SOURCES ---------- */
+.sources .cols{ display:grid; grid-template-columns:1fr 300px; gap:34px; align-items:start; }
+table.src{ width:100%; border-collapse:collapse; font-size:14px; }
+table.src th{ background:var(--navy); color:#E7DECF; font-family:var(--sans); font-weight:700;
+  font-size:12px; letter-spacing:.08em; text-transform:uppercase; text-align:left; padding:12px 16px; }
+table.src td{ padding:11px 16px; border-bottom:1px solid var(--line); color:var(--body); }
+table.src tr:nth-child(even) td{ background:var(--cream-2); }
+table.src td.rel{ font-weight:700; }
+.merkinnat{ background:#FBF8F1; border:1px solid var(--line-strong); padding:24px 22px; }
+.merkinnat h3{ font-family:var(--sans); font-weight:700; font-size:13px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--navy); margin:0 0 18px; }
+.merkinnat dt{ font-weight:700; font-size:13.5px; color:var(--ink); margin-top:14px; }
+.merkinnat dt:first-child{ margin-top:0; }
+.merkinnat dd{ margin:3px 0 0; font-size:12.5px; line-height:1.4; color:var(--muted); }
+.merkinnat .swatch{ display:inline-block; width:10px; height:10px; margin-right:6px; vertical-align:middle; }
