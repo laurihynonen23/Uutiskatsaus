@@ -75,7 +75,10 @@ body{ font-family:var(--sans); color:var(--body); -webkit-font-smoothing:antiali
 .kp .t .warn{ color:var(--red); font-weight:700; }
 
 /* ---------- CONFLICT (map + analysis) ---------- */
-.conflict .cols{ display:grid; grid-template-columns:520px 1fr; gap:34px; }
+.conflict .intro{ flex:0 0 auto; font-family:var(--serif); font-size:15px; line-height:1.5;
+  color:var(--body); margin:0 0 16px; max-width:1170px; }
+.conflict .intro b{ color:var(--ink); }
+.conflict .cols{ display:grid; grid-template-columns:560px 1fr; gap:36px; }
 .mapwrap{ display:flex; flex-direction:column; min-height:0; }
 .mapwrap img{ width:100%; flex:1 1 auto; min-height:0; object-fit:cover; border:1px solid var(--line-strong); }
 .mapcap{ font-family:var(--sans); font-size:11px; color:var(--muted); margin-top:8px;
@@ -130,6 +133,9 @@ body{ font-family:var(--sans); color:var(--body); -webkit-font-smoothing:antiali
 
 /* ---------- TRENDING ---------- */
 .trending .cols{ display:grid; grid-template-columns:1fr 320px; gap:36px; }
+.trending.nosidebar .cols{ grid-template-columns:1fr; }
+.trending.nosidebar .feed{ column-count:2; column-gap:48px; }
+.trending.nosidebar .item{ break-inside:avoid; }
 .feed{ display:flex; flex-direction:column; }
 .item{ padding:13px 0; border-bottom:1px solid var(--line); }
 .item:last-child{ border-bottom:0; }

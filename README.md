@@ -41,10 +41,13 @@ Rutiini (claude.ai/code) tekee joka aamu:
 | `sample-data.json` | Kiinteä näytesisältö previewiä varten |
 | `fonts/` | Bundlatut woff2 (Playfair Display, Lora, Inter) — identtinen renderöinti kaikkialla |
 
-## Diatyypit
+## Diarakenne (5–7 diaa)
 
-Kansi · Executive Summary · konfliktidiat (kartta + analyysi) · nousevat kriisit (3 korttia) ·
-analyytikon huomio (valinnainen) · trending (1–2 diaa) · lähteet & luotettavuusarviot.
+Kansi · **Ukraina — rintamatilanne** (ainoa kartta; lähde Black Bird Group + ISW) ·
+Kansainvälinen politiikka · Turvallisuus ja puolustus · Suomi · Teknologia ja markkinat ·
+Lähteet ja luotettavuusarviot.
+
+Aihediat (`topics`) käyttävät samaa pohjaa: otsikko + nostot (3–5) + valinnainen sivupalkki.
 
 ## Tyyli
 
