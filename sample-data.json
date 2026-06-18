@@ -2,11 +2,11 @@
   "date": "16. kesäkuuta 2026",
   "dateISO": "2026-06-16",
   "time": "08:00 EEST",
-  "footer": "SIVIILI · ANALYYTTINEN KATSAUS",
+  "footer": "AJANKOHTAISKATSAUS",
   "cover": {
-    "eyebrow": "SIVIILI · ANALYYTTINEN KATSAUS · EI LUOKITELTU",
-    "title": "Päivittäinen tiedustelukatsaus",
-    "subtitle": "Strateginen tilannekuva päätöksenteon tueksi"
+    "eyebrow": "AJANKOHTAISKATSAUS · PÄIVÄN TILANNEKUVA",
+    "title": "Päivittäinen ajankohtaiskatsaus",
+    "subtitle": "Maailman ja kotimaan tärkeimmät tapahtumat – tiiviisti ja analysoituna"
   },
   "ydin": {
     "headline": "Öljy yli 98 dollarissa, Pokrovskin mottitaistelu kiristyy",

@@ -1,4 +1,4 @@
-# Tiedustelukatsaus — päivittäinen siviilitiedusteluraportti
+# Ajankohtaiskatsaus — päivittäinen uutis- ja tilannekatsaus
 
 Lukittu **HTML/CSS-generaattori**, joka tuottaa PowerPoint-briiffaustyylisen PDF:n.
 Design on koodissa (yksi totuuden lähde) → ulkonäkö on **aina sama**, vain sisältö vaihtuu.
@@ -26,7 +26,7 @@ Rutiini (claude.ai/code) tekee joka aamu:
 1. Hakee päivän uutiset web-hauilla.
 2. Kirjoittaa päivän sisällön: `data/uutiskatsaus_VVVVKKPP.json` (sama skeema kuin `sample-data.json`).
 3. Renderöi konfliktikartat: `python3 render_map.py <spec.json>` → `maps/*.png` (OSM-pohja + overlay).
-4. Rakentaa PDF:n: `node build.js --data data/uutiskatsaus_VVVVKKPP.json --out reports/tiedustelukatsaus_VVVVKKPP.pdf`
+4. Rakentaa PDF:n: `node build.js --data data/uutiskatsaus_VVVVKKPP.json --out reports/ajankohtaiskatsaus_VVVVKKPP.pdf`
 5. Lähettää PDF:n sähköpostilla liitteenä (Resend) ja committaa sen repoon.
 
 ## Rakenne
@@ -57,5 +57,5 @@ ja `topics[].side.chart` (käyrä `render_chart.py`:llä, esim. `charts/oil.png`
 
 ## Tyyli
 
-"Editoriaali / tiedustelubriiffi": vaalea kerma tausta, navy-sivupalkit, punainen + kulta aksentit,
-serif-otsikot (Playfair/Lora). **Ei** tummaa navy-täystaustaa sisältödioilla, **ei** SVG-laatikoita karttoina.
+"Editoriaali / asiantuntijabriiffi": vaalea kerma tausta, navy-sivupalkit, **yksi** punainen brändiaksentti,
+Playfair-otsikot + Inter-leipäteksti (luettavuus edellä). **Ei** tummaa navy-täystaustaa sisältödioilla, **ei** SVG-laatikoita karttoina.

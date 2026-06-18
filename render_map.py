@@ -81,7 +81,7 @@ def render(spec):
         from staticmap.staticmap import _lon_to_x, _lat_to_y
         try:
             m = StaticMap(w, h, url_template="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                          headers={"User-Agent": "tiedustelukatsaus/1.0 (+https://github.com/laurihynonen23/Uutiskatsaus)"})
+                          headers={"User-Agent": "ajankohtaiskatsaus/1.0 (+https://github.com/laurihynonen23/Uutiskatsaus)"})
         except TypeError:
             m = StaticMap(w, h, url_template="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png")
         img = m.render(zoom=zoom, center=center).convert("RGBA")

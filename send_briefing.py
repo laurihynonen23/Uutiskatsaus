@@ -102,7 +102,7 @@ def main() -> int:
     html = build_html(body_html, title)
 
     date_fi = datetime.now().strftime("%-d.%-m.%Y")
-    subject = f"Tiedustelukatsaus – {date_fi}"
+    subject = f"Ajankohtaiskatsaus – {date_fi}"
 
     payload = json.dumps({
         "from": from_addr,

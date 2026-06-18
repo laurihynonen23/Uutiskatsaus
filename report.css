@@ -24,7 +24,7 @@ body{ font-family:var(--sans); color:var(--body); -webkit-font-smoothing:antiali
   font-family:var(--sans); font-weight:700; font-size:13px; letter-spacing:.22em;
   text-transform:uppercase; color:var(--red); display:flex; align-items:center; gap:11px;
 }
-.eyebrow::before{ content:""; width:11px; height:11px; background:var(--navy); display:inline-block; }
+.eyebrow::before{ content:""; width:11px; height:11px; background:var(--red); display:inline-block; }
 .eyebrow.on-dark{ color:#C9B79A; } .eyebrow.on-dark::before{ background:var(--red); }
 
 .title{ font-family:var(--display); font-weight:700; color:var(--ink);
@@ -46,13 +46,13 @@ body{ font-family:var(--sans); color:var(--body); -webkit-font-smoothing:antiali
   justify-content:center; align-items:flex-start; padding:96px var(--pad); }
 .cover::before, .cover::after{ content:""; position:absolute; left:0; right:0; height:6px; }
 .cover::before{ top:0; background:var(--red); }
-.cover::after{ bottom:0; background:var(--blue); }
+.cover::after{ bottom:0; background:var(--red); }
 .cover .eyebrow{ color:#9FB4C9; letter-spacing:.28em; }
 .cover .eyebrow::before{ background:var(--red); }
 .cover h1{ font-family:var(--display); font-weight:900; font-size:88px; line-height:.98;
   margin:26px 0 0; color:#F6F1E7; letter-spacing:-.015em; max-width:1050px; }
-.cover .sub{ font-family:var(--serif); font-style:italic; font-size:27px; color:#A9BACb;
-  margin-top:20px; }
+.cover .sub{ font-family:var(--serif); font-size:25px; color:#A9BACb;
+  margin-top:20px; max-width:980px; line-height:1.3; }
 .cover .meta{ position:absolute; left:var(--pad); right:var(--pad); bottom:54px;
   display:flex; justify-content:space-between; align-items:flex-end; }
 .cover .meta .k{ font-family:var(--sans); font-size:11px; letter-spacing:.2em; text-transform:uppercase;
@@ -78,12 +78,12 @@ body{ font-family:var(--sans); color:var(--body); -webkit-font-smoothing:antiali
 .conflict .intro{ flex:0 0 auto; font-family:var(--serif); font-size:14.5px; line-height:1.45;
   color:var(--body); margin:0 0 10px; max-width:1170px; }
 .conflict .intro b{ color:var(--ink); }
-.conflict .cols{ display:grid; grid-template-columns:560px 1fr; gap:36px; }
+.conflict .cols{ display:grid; grid-template-columns:560px 1fr; gap:36px; overflow:hidden; }
 .conflict .cols > *{ min-height:0; }
-.mapwrap{ display:flex; flex-direction:column; min-height:0; }
-.mapwrap img{ width:100%; flex:1 1 auto; min-height:0; object-fit:cover; border:1px solid var(--line-strong); }
-.mapcap{ font-family:var(--sans); font-size:11px; color:var(--muted); margin-top:8px;
-  display:flex; justify-content:space-between; gap:10px; }
+.mapwrap{ display:flex; flex-direction:column; min-height:0; overflow:hidden; }
+.mapwrap img{ width:100%; flex:1 1 auto; min-height:120px; object-fit:cover; border:1px solid var(--line-strong); }
+.mapcap{ flex:0 0 auto; font-family:var(--sans); font-size:11px; color:var(--muted); margin-top:8px;
+  display:flex; justify-content:space-between; gap:10px; line-height:1.35; }
 .rel{ font-weight:700; } .rel.korkea{color:var(--green);} .rel.keski{color:var(--blue);} .rel.matala{color:var(--red);}
 .analysis{ display:flex; flex-direction:column; gap:14px; overflow:hidden; min-height:0; }
 .sec h4{ font-family:var(--sans); font-weight:700; font-size:13px; letter-spacing:.14em;
@@ -146,7 +146,7 @@ body{ font-family:var(--sans); color:var(--body); -webkit-font-smoothing:antiali
 .sidebox h3{ font-family:var(--display); font-weight:700; font-size:26px; color:var(--ink); margin:0 0 18px; }
 .sidebox ul{ margin:0; padding:0; list-style:none; }
 .sidebox li{ font-size:13.5px; line-height:1.4; margin-bottom:14px; padding-left:16px; position:relative; color:var(--body); }
-.sidebox li::before{ content:""; position:absolute; left:0; top:6px; width:8px; height:8px; background:var(--navy); }
+.sidebox li::before{ content:""; position:absolute; left:0; top:6px; width:8px; height:8px; background:var(--red); }
 
 /* ---------- SOURCES ---------- */
 .sources .cols{ display:grid; grid-template-columns:1fr 300px; gap:34px; align-items:start; }

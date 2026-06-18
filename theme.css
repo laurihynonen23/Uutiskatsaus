@@ -5,33 +5,30 @@
 
 @font-face { font-family:"Playfair Display"; font-weight:700; src:url("fonts/playfair-display-latin-700-normal.woff2") format("woff2"); font-display:block; }
 @font-face { font-family:"Playfair Display"; font-weight:900; src:url("fonts/playfair-display-latin-900-normal.woff2") format("woff2"); font-display:block; }
-@font-face { font-family:"Lora"; font-weight:400; font-style:normal; src:url("fonts/lora-latin-400-normal.woff2") format("woff2"); font-display:block; }
-@font-face { font-family:"Lora"; font-weight:600; font-style:normal; src:url("fonts/lora-latin-600-normal.woff2") format("woff2"); font-display:block; }
-@font-face { font-family:"Lora"; font-weight:700; font-style:normal; src:url("fonts/lora-latin-700-normal.woff2") format("woff2"); font-display:block; }
-@font-face { font-family:"Lora"; font-weight:400; font-style:italic; src:url("fonts/lora-latin-400-italic.woff2") format("woff2"); font-display:block; }
 @font-face { font-family:"Inter"; font-weight:400; src:url("fonts/inter-latin-400-normal.woff2") format("woff2"); font-display:block; }
 @font-face { font-family:"Inter"; font-weight:600; src:url("fonts/inter-latin-600-normal.woff2") format("woff2"); font-display:block; }
 @font-face { font-family:"Inter"; font-weight:700; src:url("fonts/inter-latin-700-normal.woff2") format("woff2"); font-display:block; }
 
 :root{
-  /* --- palette --- */
+  /* --- palette (yhtenäistetty: 1 aksentti + neutraalit) --- */
   --cream:#F3EEE3;       /* sisältödian tausta */
   --cream-2:#EDE6D8;     /* kortti / vuoroviiva */
-  --navy:#1C2738;        /* kansi, sivupalkit, taulukon otsikko */
+  --navy:#1C2738;        /* rakenne: kansi, sivupalkit, taulukon otsikko */
   --navy-2:#243349;
-  --red:#A8412F;         /* aksentti, hälytys */
-  --gold:#9A7B2E;        /* lukunostot, kohonnut */
-  --blue:#3E5C76;        /* seurattava, kannen alapalkki */
-  --green:#4A6B3A;       /* korkea-luotettavuus */
+  --red:#A8412F;         /* AINOA brändiaksentti: viivat, merkit, labelit */
   --ink:#1A1614;         /* otsikkoteksti */
   --body:#2C2A28;        /* leipäteksti */
   --muted:#6B6256;       /* himmeä / alatunniste */
   --line:rgba(28,39,56,.16);
   --line-strong:rgba(28,39,56,.30);
+  /* funktionaaliset (vain luotettavuusmerkinnät, eivät koristeita) */
+  --gold:#9A7B2E;
+  --blue:#3E5C76;        /* luotettavuus: keskikorkea */
+  --green:#4A6B3A;       /* luotettavuus: korkea */
 
-  /* --- type --- */
+  /* --- type (yhtenäistetty: Playfair otsikot, Inter kaikki leipäteksti) --- */
   --display:"Playfair Display", Georgia, serif;
-  --serif:"Lora", Georgia, serif;
+  --serif:"Inter", -apple-system, "Segoe UI", sans-serif; /* ent. Lora — luettavuus edellä */
   --sans:"Inter", -apple-system, "Segoe UI", sans-serif;
 
   /* --- metrics --- */
