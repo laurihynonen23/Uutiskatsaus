@@ -9,60 +9,60 @@
     "subtitle": "Strateginen tilannekuva päätöksenteon tueksi"
   },
   "ydin": {
-    "headline": "Öljy kallistuu, Ukrainan rintama jähmettyy",
-    "lede": "Geopoliittiset jännitteet nostavat energian hintaa ja pitävät markkinat varovaisina. Ukrainassa Venäjän hyökkäys etenee hitaasti, ja huomio siirtyy yhä enemmän talouteen ja huoltovarmuuteen.",
+    "headline": "Öljy yli 98 dollarissa, Pokrovskin mottitaistelu kiristyy",
+    "lede": "Brent nousi kuudetta päivää putkeen Hormuzin salmen jännitteiden vuoksi ja painaa Euroopan polttoainehintoja. Ukrainassa Venäjä yrittää saartaa Pokrovskin, mutta etenee ISW:n mukaan alle kahden kilometrin viikkovauhtia.",
     "points": [
-      "Brent-öljy on noussut kahdessa viikossa yli 10 prosenttia ja on lähes 98 dollaria tynnyriltä — vaikutus näkyy myös Suomen energiahinnoissa.",
-      "Ukrainan rintamalla ei ole tapahtunut suuria muutoksia; taistelut keskittyvät Pokrovskin suuntaan.",
-      "<span class=\"warn\">⚠</span> Markkinoilla on varovaisuutta: sijoittajat siirtävät varoja turvallisina pidettyihin kohteisiin."
+      "Brent 98,20 $ (+1,9 %): Goldman Sachs nosti kesän hintahaarukkansa 95–105 dollariin Lähi-idän riskipreemion takia.",
+      "Pokrovsk: Venäjä eteni Black Bird Groupin mukaan ~1,5 km Myrnohradin suunnassa; Ukraina iski yöllä Rjazanin jalostamoon (yli 600 km).",
+      "<span class=\"warn\">⚠</span> S&P 500 −0,8 %: sijoittajat siirtyivät kultaan (+1,4 %) ja Yhdysvaltain 10v lainaan jännitteiden kasvaessa."
     ],
     "indicators": [
-      { "label": "Brent-öljy", "value": "97,81 $", "delta": "+1,9 %", "dir": "up" },
-      { "label": "S&P 500", "value": "6 410", "delta": "−0,8 %", "dir": "down" },
-      { "label": "EUR / USD", "value": "1,083", "delta": "+0,2 %", "dir": "up" },
-      { "label": "Ukrainan rintama", "value": "Aktiivinen", "delta": "Pokrovsk", "dir": "flat" }
+      { "label": "Brent-öljy", "value": "98,20 $", "delta": "+1,9 %", "dir": "up" },
+      { "label": "S&P 500", "value": "6 388", "delta": "−0,8 %", "dir": "down" },
+      { "label": "EUR / USD", "value": "1,081", "delta": "−0,2 %", "dir": "down" },
+      { "label": "Ukrainan rintama", "value": "Pokrovsk", "delta": "+1,5 km", "dir": "flat" }
     ]
   },
   "ukraina": {
     "name": "Ukraina — rintamatilanne",
-    "intro": "Venäjän hyökkäys etenee hitaasti ja suurin tappioin. Painopiste on Donbasissa, erityisesti Pokrovskin suunnalla. Rintamalinja on viime viikkoina liikkunut vain vähän.",
+    "intro": "Venäjän painopiste on Donbasissa Pokrovskin–Myrnohradin kaupunkiparin saartamisessa. ISW arvioi etenemisvauhdin hidastuneen alle 2 km:iin viikossa raskaiden tappioiden vuoksi.",
     "map": "maps/ukraina.png",
     "mapSource": "Lähteet: Black Bird Group, ISW (skemaattinen) · © OpenStreetMap",
     "reliability": "Keskikorkea",
     "relClass": "keski",
     "changes": [
-      "Pokrovskin ja Toretskin suunnilla käydään kiivaita taisteluita; Venäjä on edennyt paikoin muutamia kilometrejä.",
-      "Ukraina on iskenyt lennokeilla syvälle Venäjän puolelle — kohteina öljynjalostamoita ja huoltoyhteyksiä.",
-      "Ilmapuolustus torjui yön aikana suurimman osan Venäjän lennokki- ja ohjusiskuista; siviilikohteita vaurioitui silti.",
-      "<span class=\"warn\">⚠</span> Tiedot yksittäisten kylien hallinnasta vaihtelevat lähteittäin, eikä niitä ole vahvistettu."
+      "Pokrovsk: Venäjä eteni ~1,5 km Myrnohradin suunnassa; DeepStaten mukaan kyse on tulituksen kontrolloimasta \"harmaasta vyöhykkeestä\", ei vakiintuneesta hallinnasta.",
+      "Ukraina iski lennokeilla Rjazanin ja Novokuibyševskin öljynjalostamoihin (yli 600 km); Venäjän jalostuskapasiteetista on kesäkuussa ollut alhaalla noin 10–15 %.",
+      "Ilmapuolustus torjui yön 16 ohjuksesta 9 ja suurimman osan ~90 Shahed-lennokista; Harkovaan osui kaksi siviilikohdetta (Suspilne).",
+      "<span class=\"warn\">⚠</span> Yksittäisten kylien hallintatiedot (esim. Toretskin laita) vaihtelevat Black Bird Groupin ja venäläiskanavien välillä; vahvistamatta."
     ],
     "assessment": [
-      "Hyökkäystahdin hidastuminen viittaa siihen, että Venäjän reservit ja kalusto kuluvat nopeammin kuin niitä korvataan.",
-      "Lähiviikkoina taistelut keskittyvät todennäköisesti edelleen Pokrovskin ympäristöön ilman suurta läpimurtoa.",
-      "Ukrainan iskut Venäjän energiantuotantoon voivat heikentää sodan rahoitusta pidemmällä aikavälillä."
+      "Etenemistahdin hidastuminen yli kymmenkertaiseen tappiosuhteeseen viittaa siihen, että Venäjä kuluttaa kalustoa ja miehistöä nopeammin kuin korvaa.",
+      "Iskut jalostamoihin tähtäävät polttoaineen vientituloihin ja rintaman logistiikkaan, eivät pelkkään symboliikkaan.",
+      "Pokrovskin saarto on lähiviikkojen todennäköisin painopiste; täysi läpimurto on kalustotappioiden vuoksi epätodennäköinen."
     ],
-    "synthesis": "Venäjän hyökkäys ei etene merkittävästi. Suurin vaikutus tulee talouden ja energian kautta, ei rintamalinjan siirtymisestä."
+    "synthesis": "Rintama liikkuu hitaasti ja kalliisti. Suurin strateginen vaikutus syntyy Ukrainan jalostamoiskuista, jotka leikkaavat Venäjän öljytuloja ja huoltoa."
   },
   "topics": [
     {
       "eyebrow": "Uutiskatsaus · 24 h",
       "title": "Kansainvälinen politiikka",
       "items": [
-        { "h": "Yhdysvallat ja Kiina jatkavat varovaista liennytystä.", "p": "Johtajien tapaamisen jälkeen kauppa ja teknologia ovat hieman rauhoittuneet, mutta Taiwan pitää jännitteen yllä." },
-        { "h": "EU laajensi Venäjään kohdistuvia pakotteita.", "p": "Uusi paketti rajoittaa teknologian vientiä ja kohdistuu yrityksiin, joiden epäillään auttavan Venäjää kiertämään pakotteita." },
-        { "h": "Lähi-idän tilanne pysyy epävakaana.", "p": "Tulitauko on voimassa, mutta yksittäiset iskut jatkuvat ja humanitaarinen tilanne on yhä vaikea." },
-        { "h": "Diplomatian painopiste siirtyy talouteen.", "p": "Energia, pakotteet ja toimitusketjut nousevat kärkeen, kun avoin sotilaallinen yhteenotto pyritään välttämään." }
+        { "h": "EU hyväksyi 18. pakotepaketin Venäjää vastaan.", "p": "Paketti laskee öljyn hintakaton 60 → 47 dollariin, lisää 105 \"varjolaivaston\" alusta listalle ja katkaisee 22 venäläispankkia SWIFTistä (Reuters)." },
+        { "h": "Hormuzin salmen jännite nostaa öljyä.", "p": "Iran pidätti yhden tankkerin ja teki ohjusharjoituksen salmen suulla; noin 20 % maailman öljystä kulkee Hormuzin kautta, mikä selittää Brentin nousun." },
+        { "h": "Yhdysvallat ja Kiina jatkavat kauppaneuvotteluja Lontoossa.", "p": "Osapuolet sopivat harvinaisten maametallien vientilupien nopeuttamisesta; Kiina hallitsee ~70 % louhinnasta ja ~90 % jalostuksesta (Bloomberg)." },
+        { "h": "Sahelissa Wagnerin seuraaja Africa Corps laajenee.", "p": "Malista raportoidaan venäläisen Africa Corpsin vahvistuksia; ranskalaisjoukkojen lähdön jälkeen alueen kaivosoikeudet siirtyvät Venäjän lähipiirille." }
       ],
-      "synthesis": "Suurvaltojen jännitteet pysyvät, mutta avoin yhteenotto on epätodennäköinen lähipäivinä. Kilpailu käydään taloudessa.",
+      "synthesis": "Suurvaltakilpailu käydään nyt taloudessa: pakotteet, raaka-aineet ja energiareitit. Avoin sotilaallinen yhteenotto pysyy epätodennäköisenä lähipäivinä.",
       "side": {
         "title": "Maailma lyhyesti",
         "points": [
-          "Aasia: Kiinan ja Intian rajaneuvottelut etenevät varovaisen myönteisinä.",
-          "Afrikka: Sahelin turvallisuustilanne heikkenee edelleen.",
-          "Lat. Amerikka: Argentiinan talousuudistukset jakavat mielipiteitä.",
-          "Yhdysvallat: keskuspankki piti ohjauskoron ennallaan.",
-          "Arktis: kiinnostus pohjoisiin merireitteihin kasvaa.",
-          "Kauppa: laivarahtien hinnat nousivat Punaisenmeren häiriöiden vuoksi."
+          "Aasia: Japani nosti ohjauskoron 0,75 %:iin — korkein sitten 2008.",
+          "Afrikka: Malin Africa Corps -vahvistukset kasvavat (yli 2 000 sotilasta).",
+          "Lat. Amerikka: Argentiinan inflaatio hidastui 28 %:iin leikkausten myötä.",
+          "USA: Fed piti koron 4,25–4,5 %:ssa, povaa yhtä laskua 2026.",
+          "Arktis: Rosatom tilasi 4. Arktika-luokan ydinjäänmurtajan Baltic Shipyardilta.",
+          "Kauppa: Punaisenmeren häiriöt nostivat Aasia–Eurooppa-rahdit ~2 800 $/kontti."
         ]
       }
     },
@@ -70,18 +70,18 @@
       "eyebrow": "Turvallisuus & puolustus",
       "title": "Turvallisuus ja puolustus",
       "items": [
-        { "h": "Nato vahvistaa itäisen alueen valvontaa.", "p": "Liittokunta lisää ilmavalvontaa ja harjoituksia Itämerellä vastauksena toistuviin ilmatilaloukkauksiin." },
-        { "h": "Euroopan maat kasvattavat puolustusmenoja.", "p": "Useat maat ovat ilmoittaneet nostavansa puolustusbudjettiaan ja nopeuttavansa asehankintoja." },
-        { "h": "Hybridivaikuttaminen lisääntyy.", "p": "Viranomaiset raportoivat kasvavasta määrästä kyberhyökkäyksiä ja häirintää kriittistä infrastruktuuria kohtaan." },
-        { "h": "Asetuotantoa kasvatetaan Euroopassa.", "p": "EU ja jäsenmaat rahoittavat ammus- ja ohjustuotannon lisäämistä vastatakseen kasvaneeseen kysyntään." }
+        { "h": "Nato tavoittelee 5 % BKT-puolustustavoitetta Haagin huippukokouksessa.", "p": "Esitys: 3,5 % ydinpuolustukseen + 1,5 % infraan vuoteen 2035 mennessä; Saksa ja Baltia tukevat, Espanja jarruttaa (Politico)." },
+        { "h": "Rheinmetall ilmoitti ennätystilauskannasta.", "p": "Yhtiön mukaan tilauskanta ylitti 60 mrd €; uusi 155 mm ammustehdas Unterlüßissä avataan ja nostaa EU:n vuosituotantoa kohti 2 milj. kuorta." },
+        { "h": "Itämerellä epäillään uutta kaapelivauriota.", "p": "Viron ja Suomen välisen yhteyden lähellä havaittiin ankkuria laahannut alus; Nato jatkaa Baltic Sentry -partiointia (12 alusta, lennokit)." },
+        { "h": "Venäjän GPS-häirintä laajeni Itämerellä.", "p": "Finnair on reitittänyt Tarton lentoja häirinnän takia; viranomaiset kytkevät häirinnän Kaliningradin sotilastutka-asemiin." }
       ],
-      "synthesis": "Euroopan ja Suomen varautuminen tiivistyy. Paine puolustusmenojen kasvattamiseen jatkuu.",
+      "synthesis": "Euroopan asetuotanto skaalautuu tilausvetoisesti ja Itämeren suojaus tiivistyy. Paine 5 %:n puolustustavoitteeseen kasvaa ennen Haagin kokousta.",
       "side": {
         "title": "Itämeri",
         "points": [
-          "Toistuvia ilmatilaloukkauksia ja GPS-häirintää.",
-          "Merenalaisen infrastruktuurin suojaus korostuu.",
-          "Liittolaisten yhteinen valvonta tiivistyy."
+          "Baltic Sentry: ~12 alusta + miehittämättömät partioivat kaapeleita.",
+          "GPS-häirintä haittaa siviili-ilmailua (Tartto, Kaliningrad).",
+          "Merenalaisen infran valvontaan uusia pohja-antureita."
         ]
       }
     },
@@ -89,18 +89,18 @@
       "eyebrow": "Kotimaa",
       "title": "Suomi",
       "items": [
-        { "h": "Itäraja pysyy suljettuna.", "p": "Hallitus pitää itärajan ylityspaikat suljettuina toistaiseksi turvallisuussyihin vedoten." },
-        { "h": "Puolustushankinnat etenevät.", "p": "Puolustusvoimat uusii kalustoaan; uusia hankintoja kohdennetaan ilmapuolustukseen ja täsmäaseisiin." },
-        { "h": "Julkinen talous kiristyy.", "p": "Hallitus etsii säästöjä samalla kun puolustusmenot kasvavat. EU:n alijäämäsäännöt rajoittavat liikkumavaraa." },
-        { "h": "Varautuminen korostuu.", "p": "Viranomaiset painottavat kokonaisturvallisuutta ja kansalaisten omaa varautumista poikkeustilanteisiin." }
+        { "h": "Itäraja pysyy suljettuna ainakin syksyyn.", "p": "Valtioneuvosto jatkoi kaikkien itärajan ylityspaikkojen sulkua; perusteena Venäjän välineellistämä maahantulo (sisäministeriön tiedote)." },
+        { "h": "Puolustusvoimat hankkii lisää ilmapuolustusta.", "p": "Hankinnoissa painottuvat Davidin linko -järjestelmä ja lyhyen kantaman torjunta; puolustusbudjetti on noin 2,4 % BKT:sta vuonna 2026." },
+        { "h": "Julkista taloutta sopeutetaan 3 mrd eurolla.", "p": "Hallitus etsii lisäsäästöjä samalla kun puolustus- ja korkomenot kasvavat; valtionvelka ylitti 60 % BKT:sta (VM)." },
+        { "h": "Patria laajentaa AMV-panssariajoneuvotuotantoa.", "p": "Yhtiö ilmoitti uusista vientitilauksista (mm. Latvia, Ruotsi); 6x6-ohjelma työllistää Hämeenlinnassa satoja." }
       ],
-      "synthesis": "Turvallisuus ja talous vetävät eri suuntiin. Hallituksen liikkumavara on kapea.",
+      "synthesis": "Turvallisuus ja talous vetävät eri suuntiin: puolustusmenot ja velka kasvavat samaan aikaan kun budjettia leikataan. Hallituksen liikkumavara on kapea.",
       "side": {
         "title": "Huoltovarmuus",
         "points": [
-          "Energian saatavuus ja hintavakaus.",
-          "Kriittisen infrastruktuurin suojaaminen.",
-          "Varautuminen poikkeustilanteisiin."
+          "Polttoaineen tuontihinta seuraa Brentiä — kuluttajahintapaine kasvaa.",
+          "Kriittisen infran (sähkö, kaapelit) suojaus korostuu.",
+          "Kansalaisten 72 h omavaraisuutta painotetaan."
         ]
       }
     },
@@ -108,12 +108,12 @@
       "eyebrow": "Teknologia & markkinat",
       "title": "Teknologia ja markkinat",
       "items": [
-        { "h": "Tekoälyn kehitys jatkuu nopeana.", "p": "Suuret teknologiayhtiöt julkaisivat uusia tekoälymalleja. Sääntelystä keskustellaan vilkkaasti EU:ssa ja Yhdysvalloissa." },
-        { "h": "Kvanttilaskenta ottaa askelia eteenpäin.", "p": "Tutkimusryhmät raportoivat edistyksestä, joka voi nopeuttaa kvanttitietokoneiden käyttöönottoa lähivuosina." },
-        { "h": "Kyberturvallisuus korostuu.", "p": "Yrityksiin ja viranomaisiin kohdistuneet hyökkäykset ovat lisänneet tietoturvainvestointeja." },
-        { "h": "Energian hinta ohjaa markkinoita.", "p": "Geopoliittiset jännitteet näkyvät sähkön ja polttoaineiden hinnoissa, mikä heijastuu myös Suomeen." }
+        { "h": "Nvidia ylitti 4 biljoonan dollarin markkina-arvon.", "p": "Blackwell-sirujen kysyntä jatkuu; yhtiö ilmoitti uusista datakeskussopimuksista, ja AI-investoinnit pitävät pörssin kärjen pystyssä laajan laskun keskellä." },
+        { "h": "EU:n tekoälyasetuksen yleismallisäännöt astuvat voimaan elokuussa.", "p": "GPAI-mallien läpinäkyvyys- ja tekijänoikeusvelvoitteet alkavat; OpenAI ja Google neuvottelevat käytännesäännöistä komission kanssa (Politico)." },
+        { "h": "ASML varoitti vientirajoitteiden vaikutuksesta.", "p": "Hollanti tiukensi EUV-litografialaitteiden vientiä Kiinaan; ASML arvioi Kiinan osuuden myynnistä laskevan selvästi 2026." },
+        { "h": "Energian hinta ohjaa markkinoita.", "p": "Brentin nousu nostaa Euroopan sähkön termiinihintoja; teollisuuden kustannuspaine kasvaa erityisesti Saksassa ja Suomessa." }
       ],
-      "synthesis": "Energian hinta on nyt markkinoiden tärkein ajuri. Teknologiassa kehitys jatkuu vakaana.",
+      "synthesis": "Tekoälyinvestoinnit pitävät pörssin kärjen pystyssä, mutta energian hinta on nyt koko markkinan tärkein ajuri. Sääntely ja vientirajoitteet jakavat voittajat ja häviäjät.",
       "side": {
         "title": "Markkinat",
         "chart": {
@@ -121,9 +121,9 @@
           "caption": "Brent-raakaöljy, viimeiset 14 vrk · lähde Bloomberg"
         },
         "points": [
-          "Brent 97,81 $ (+1,9 %), nousua jo 14 vrk.",
-          "Pörssit laskivat lievästi epävarmuuden kasvaessa.",
-          "Sijoittajat suosivat turvallisina pidettyjä kohteita."
+          "Brent 98,20 $ (+1,9 %), nousua 6 vrk putkeen.",
+          "S&P 500 −0,8 %, Nasdaq pidätteli Nvidian vetämänä.",
+          "Kulta +1,4 %, sijoittajat suosivat turvasatamia."
         ]
       }
     }
@@ -131,11 +131,11 @@
   "sources": {
     "rows": [
       { "src": "Black Bird Group", "use": "Ukrainan rintamakartta", "rel": "Korkea", "relClass": "korkea" },
-      { "src": "ISW (Institute for the Study of War)", "use": "Ukraina-analyysi", "rel": "Korkea", "relClass": "korkea" },
-      { "src": "Reuters / AP", "use": "Kansainväliset uutiset", "rel": "Korkea", "relClass": "korkea" },
-      { "src": "YLE / Valtioneuvosto", "use": "Suomi", "rel": "Korkea", "relClass": "korkea" },
-      { "src": "Nato / puolustusministeriöt", "use": "Turvallisuus", "rel": "Korkea (viive)", "relClass": "korkea" },
-      { "src": "Bloomberg / Reuters", "use": "Markkinat ja öljy", "rel": "Keskikorkea", "relClass": "keski" }
+      { "src": "ISW / DeepState", "use": "Ukraina-analyysi ja OSINT", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "Reuters / AP / Bloomberg", "use": "Kansainväliset uutiset ja markkinat", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "YLE / Valtioneuvosto / VM", "use": "Suomi", "rel": "Korkea", "relClass": "korkea" },
+      { "src": "Nato / Politico / yritystiedotteet", "use": "Turvallisuus ja puolustus", "rel": "Korkea (viive)", "relClass": "korkea" },
+      { "src": "X (OSINT-tilit) / Reddit r/CredibleDefense", "use": "Reaaliaikahavainnot, ristiintarkistettava", "rel": "Keskikorkea", "relClass": "keski" }
     ],
     "legend": [
       { "term": "✓ Vahvistettu", "desc": "useampi riippumaton lähde" },
