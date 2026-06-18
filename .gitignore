@@ -14,3 +14,5 @@ big*.png
 _min.*
 maps/*_real.png
 # NOTE: reports/*.pdf and maps/*.png ovat tarkoituksella mukana versionhallinnassa
+a_*.png
+big_*.png
