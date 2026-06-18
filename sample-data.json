@@ -2,11 +2,26 @@
   "date": "16. kesäkuuta 2026",
   "dateISO": "2026-06-16",
   "time": "08:00 EEST",
-  "footer": "SIVIILI / ANALYYTTINEN KATSAUS",
+  "footer": "SIVIILI · ANALYYTTINEN KATSAUS",
   "cover": {
-    "eyebrow": "SIVIILI / ANALYYTTINEN KATSAUS · EI LUOKITELTU",
+    "eyebrow": "SIVIILI · ANALYYTTINEN KATSAUS · EI LUOKITELTU",
     "title": "Päivittäinen tiedustelukatsaus",
     "subtitle": "Strateginen tilannekuva päätöksenteon tueksi"
+  },
+  "ydin": {
+    "headline": "Öljy kallistuu, Ukrainan rintama jähmettyy",
+    "lede": "Geopoliittiset jännitteet nostavat energian hintaa ja pitävät markkinat varovaisina. Ukrainassa Venäjän hyökkäys etenee hitaasti, ja huomio siirtyy yhä enemmän talouteen ja huoltovarmuuteen.",
+    "points": [
+      "Brent-öljy on noussut kahdessa viikossa yli 10 prosenttia ja on lähes 98 dollaria tynnyriltä — vaikutus näkyy myös Suomen energiahinnoissa.",
+      "Ukrainan rintamalla ei ole tapahtunut suuria muutoksia; taistelut keskittyvät Pokrovskin suuntaan.",
+      "<span class=\"warn\">⚠</span> Markkinoilla on varovaisuutta: sijoittajat siirtävät varoja turvallisina pidettyihin kohteisiin."
+    ],
+    "indicators": [
+      { "label": "Brent-öljy", "value": "97,81 $", "delta": "+1,9 %", "dir": "up" },
+      { "label": "S&P 500", "value": "6 410", "delta": "−0,8 %", "dir": "down" },
+      { "label": "EUR / USD", "value": "1,083", "delta": "+0,2 %", "dir": "up" },
+      { "label": "Ukrainan rintama", "value": "Aktiivinen", "delta": "Pokrovsk", "dir": "flat" }
+    ]
   },
   "ukraina": {
     "name": "Ukraina — rintamatilanne",
@@ -25,7 +40,8 @@
       "Hyökkäystahdin hidastuminen viittaa siihen, että Venäjän reservit ja kalusto kuluvat nopeammin kuin niitä korvataan.",
       "Lähiviikkoina taistelut keskittyvät todennäköisesti edelleen Pokrovskin ympäristöön ilman suurta läpimurtoa.",
       "Ukrainan iskut Venäjän energiantuotantoon voivat heikentää sodan rahoitusta pidemmällä aikavälillä."
-    ]
+    ],
+    "synthesis": "Venäjän hyökkäys ei etene merkittävästi. Suurin vaikutus tulee talouden ja energian kautta, ei rintamalinjan siirtymisestä."
   },
   "topics": [
     {
@@ -35,14 +51,18 @@
         { "h": "Yhdysvallat ja Kiina jatkavat varovaista liennytystä.", "p": "Johtajien tapaamisen jälkeen kauppa ja teknologia ovat hieman rauhoittuneet, mutta Taiwan pitää jännitteen yllä." },
         { "h": "EU laajensi Venäjään kohdistuvia pakotteita.", "p": "Uusi paketti rajoittaa teknologian vientiä ja kohdistuu yrityksiin, joiden epäillään auttavan Venäjää kiertämään pakotteita." },
         { "h": "Lähi-idän tilanne pysyy epävakaana.", "p": "Tulitauko on voimassa, mutta yksittäiset iskut jatkuvat ja humanitaarinen tilanne on yhä vaikea." },
-        { "h": "Sahelin kriisit syvenevät.", "p": "Aseelliset konfliktit ja humanitaariset kriisit laajenevat, mikä lisää muuttoliikettä ja epävakautta alueella." }
+        { "h": "Diplomatian painopiste siirtyy talouteen.", "p": "Energia, pakotteet ja toimitusketjut nousevat kärkeen, kun avoin sotilaallinen yhteenotto pyritään välttämään." }
       ],
+      "synthesis": "Suurvaltojen jännitteet pysyvät, mutta avoin yhteenotto on epätodennäköinen lähipäivinä. Kilpailu käydään taloudessa.",
       "side": {
-        "title": "Seurattavaa",
+        "title": "Maailma lyhyesti",
         "points": [
-          "Yhdysvaltain ja Kiinan seuraava huipputapaaminen.",
-          "Pakotteiden vaikutus Venäjän vientituloihin.",
-          "Lähi-idän tulitauon kestävyys."
+          "Aasia: Kiinan ja Intian rajaneuvottelut etenevät varovaisen myönteisinä.",
+          "Afrikka: Sahelin turvallisuustilanne heikkenee edelleen.",
+          "Lat. Amerikka: Argentiinan talousuudistukset jakavat mielipiteitä.",
+          "Yhdysvallat: keskuspankki piti ohjauskoron ennallaan.",
+          "Arktis: kiinnostus pohjoisiin merireitteihin kasvaa.",
+          "Kauppa: laivarahtien hinnat nousivat Punaisenmeren häiriöiden vuoksi."
         ]
       }
     },
@@ -55,6 +75,7 @@
         { "h": "Hybridivaikuttaminen lisääntyy.", "p": "Viranomaiset raportoivat kasvavasta määrästä kyberhyökkäyksiä ja häirintää kriittistä infrastruktuuria kohtaan." },
         { "h": "Asetuotantoa kasvatetaan Euroopassa.", "p": "EU ja jäsenmaat rahoittavat ammus- ja ohjustuotannon lisäämistä vastatakseen kasvaneeseen kysyntään." }
       ],
+      "synthesis": "Euroopan ja Suomen varautuminen tiivistyy. Paine puolustusmenojen kasvattamiseen jatkuu.",
       "side": {
         "title": "Itämeri",
         "points": [
@@ -73,6 +94,7 @@
         { "h": "Julkinen talous kiristyy.", "p": "Hallitus etsii säästöjä samalla kun puolustusmenot kasvavat. EU:n alijäämäsäännöt rajoittavat liikkumavaraa." },
         { "h": "Varautuminen korostuu.", "p": "Viranomaiset painottavat kokonaisturvallisuutta ja kansalaisten omaa varautumista poikkeustilanteisiin." }
       ],
+      "synthesis": "Turvallisuus ja talous vetävät eri suuntiin. Hallituksen liikkumavara on kapea.",
       "side": {
         "title": "Huoltovarmuus",
         "points": [
@@ -89,13 +111,18 @@
         { "h": "Tekoälyn kehitys jatkuu nopeana.", "p": "Suuret teknologiayhtiöt julkaisivat uusia tekoälymalleja. Sääntelystä keskustellaan vilkkaasti EU:ssa ja Yhdysvalloissa." },
         { "h": "Kvanttilaskenta ottaa askelia eteenpäin.", "p": "Tutkimusryhmät raportoivat edistyksestä, joka voi nopeuttaa kvanttitietokoneiden käyttöönottoa lähivuosina." },
         { "h": "Kyberturvallisuus korostuu.", "p": "Yrityksiin ja viranomaisiin kohdistuneet hyökkäykset ovat lisänneet tietoturvainvestointeja." },
-        { "h": "Energiamarkkinat reagoivat herkästi.", "p": "Geopoliittiset jännitteet näkyvät sähkön ja polttoaineiden hinnoissa, mikä heijastuu myös Suomeen." }
+        { "h": "Energian hinta ohjaa markkinoita.", "p": "Geopoliittiset jännitteet näkyvät sähkön ja polttoaineiden hinnoissa, mikä heijastuu myös Suomeen." }
       ],
+      "synthesis": "Energian hinta on nyt markkinoiden tärkein ajuri. Teknologiassa kehitys jatkuu vakaana.",
       "side": {
         "title": "Markkinat",
+        "chart": {
+          "image": "charts/oil.png",
+          "caption": "Brent-raakaöljy, viimeiset 14 vrk · lähde Bloomberg"
+        },
         "points": [
-          "Öljyn hinta nousi geopoliittisten jännitteiden vuoksi.",
-          "Osakemarkkinat laskivat lievästi epävarmuuden kasvaessa.",
+          "Brent 97,81 $ (+1,9 %), nousua jo 14 vrk.",
+          "Pörssit laskivat lievästi epävarmuuden kasvaessa.",
           "Sijoittajat suosivat turvallisina pidettyjä kohteita."
         ]
       }
@@ -108,7 +135,7 @@
       { "src": "Reuters / AP", "use": "Kansainväliset uutiset", "rel": "Korkea", "relClass": "korkea" },
       { "src": "YLE / Valtioneuvosto", "use": "Suomi", "rel": "Korkea", "relClass": "korkea" },
       { "src": "Nato / puolustusministeriöt", "use": "Turvallisuus", "rel": "Korkea (viive)", "relClass": "korkea" },
-      { "src": "Bloomberg / Reuters", "use": "Markkinat", "rel": "Keskikorkea", "relClass": "keski" }
+      { "src": "Bloomberg / Reuters", "use": "Markkinat ja öljy", "rel": "Keskikorkea", "relClass": "keski" }
     ],
     "legend": [
       { "term": "✓ Vahvistettu", "desc": "useampi riippumaton lähde" },

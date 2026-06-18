@@ -1,6 +1,6 @@
 /* ============================================================
    template.js — data (JSON) -> HTML
-   Rakenne: kansi · Ukraina (rintama+kartta) · aihediat (topics) · lähteet
+   Rakenne: kansi · Päivän ydin · Ukraina (rintama+kartta) · aihediat · lähteet
    Sisältöstringit saavat sisältää yksinkertaista HTML:ää
    (esim. <span class="warn">⚠</span>) — data on luotettavaa.
    ============================================================ */
@@ -10,6 +10,24 @@ const esc = (s = "") => String(s ?? "");
 function foot(d, n) {
   return `<div class="foot"><span>${esc(d.footer)}</span>
     <span>${esc(d.date)} · ${esc(d.time)}</span><span>${n} / ${d._total}</span></div>`;
+}
+
+// per-dia johtopäätös (alapalkki ennen alatunnistetta)
+function synth(text) {
+  return text ? `<div class="synthesis"><span class="lbl">Johtopäätös</span><span>${esc(text)}</span></div>` : "";
+}
+
+const ARROW = { up: "▲", down: "▼", flat: "▬" };
+
+function indicators(list) {
+  if (!list || !list.length) return "";
+  const tiles = list.map((x) => `
+    <div class="ind ${esc(x.dir || "flat")}">
+      <div class="l">${esc(x.label)}</div>
+      <div class="v">${esc(x.value)}</div>
+      <div class="d">${ARROW[x.dir] || ARROW.flat} ${esc(x.delta)}</div>
+    </div>`).join("");
+  return `<div class="indicators">${tiles}</div>`;
 }
 
 function cover(d) {
@@ -22,6 +40,21 @@ function cover(d) {
       <div><span class="k">Päivämäärä</span><span class="v">${esc(d.date)}</span></div>
       <div style="text-align:right"><span class="k">Laadittu</span><span class="v">${esc(d.time)}</span></div>
     </div>
+  </section>`;
+}
+
+function ydinSlide(d, n) {
+  const y = d.ydin;
+  const pts = (y.points || []).map((p) =>
+    `<div class="ykp"><span class="dot"></span><span>${esc(p)}</span></div>`).join("");
+  return `<section class="slide ydinslide">
+    <div class="eyebrow">Päivän ydin</div>
+    <h1 class="title">${esc(y.headline)}</h1>
+    <div class="rule"></div>
+    <p class="lede">${esc(y.lede)}</p>
+    <div class="ykps">${pts}</div>
+    ${indicators(y.indicators)}
+    ${foot(d, n)}
   </section>`;
 }
 
@@ -44,6 +77,7 @@ function ukraina(d, n) {
         <div class="sec"><h4>Strateginen merkitys</h4><ul>${li(u.assessment)}</ul></div>
       </div>
     </div>
+    ${synth(u.synthesis)}
     ${foot(d, n)}
   </section>`;
 }
@@ -51,13 +85,24 @@ function ukraina(d, n) {
 function topic(d, t, n) {
   const items = t.items.map((i) =>
     `<div class="item"><h4>${esc(i.h)}</h4><p>${esc(i.p)}</p></div>`).join("");
-  const side = t.side ? `<div class="sidebox"><h3>${esc(t.side.title)}</h3>
-    <ul>${t.side.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div>` : "";
-  return `<section class="slide trending${t.side ? "" : " nosidebar"}">
+  let side = "";
+  if (t.side) {
+    const chart = t.side.chart
+      ? `<img class="sidechart" src="${esc(t.side.chart.image)}" alt="kaavio">
+         ${t.side.chart.caption ? `<div class="chartcap">${esc(t.side.chart.caption)}</div>` : ""}`
+      : "";
+    const pts = (t.side.points || []).map((p) => `<li>${esc(p)}</li>`).join("");
+    side = `<div class="sidebox"><h3>${esc(t.side.title)}</h3>${chart}${pts ? `<ul>${pts}</ul>` : ""}</div>`;
+  }
+  const cls = ["slide", "trending"];
+  if (!t.side) cls.push("nosidebar");
+  if (t.side && t.side.chart) cls.push("has-chart");
+  return `<section class="${cls.join(" ")}">
     <div class="eyebrow">${esc(t.eyebrow)}</div>
     <h1 class="title">${esc(t.title)}</h1>
     <div class="rule"></div>
     <div class="cols"><div class="feed">${items}</div>${side}</div>
+    ${synth(t.synthesis)}
     ${foot(d, n)}
   </section>`;
 }
@@ -82,9 +127,10 @@ function sources(d, n) {
 }
 
 function renderHTML(d) {
-  d._total = 1 + 1 + d.topics.length + (d.sources ? 1 : 0);
+  d._total = 1 + (d.ydin ? 1 : 0) + 1 + d.topics.length + (d.sources ? 1 : 0);
   let pn = 1; // kansi = sivu 1 (ei alatunnistetta)
   const slides = [cover(d)];
+  if (d.ydin) slides.push(ydinSlide(d, ++pn));
   slides.push(ukraina(d, ++pn));
   d.topics.forEach((t) => slides.push(topic(d, t, ++pn)));
   if (d.sources) slides.push(sources(d, ++pn));

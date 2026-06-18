@@ -75,21 +75,22 @@ body{ font-family:var(--sans); color:var(--body); -webkit-font-smoothing:antiali
 .kp .t .warn{ color:var(--red); font-weight:700; }
 
 /* ---------- CONFLICT (map + analysis) ---------- */
-.conflict .intro{ flex:0 0 auto; font-family:var(--serif); font-size:15px; line-height:1.5;
-  color:var(--body); margin:0 0 16px; max-width:1170px; }
+.conflict .intro{ flex:0 0 auto; font-family:var(--serif); font-size:14.5px; line-height:1.45;
+  color:var(--body); margin:0 0 10px; max-width:1170px; }
 .conflict .intro b{ color:var(--ink); }
 .conflict .cols{ display:grid; grid-template-columns:560px 1fr; gap:36px; }
+.conflict .cols > *{ min-height:0; }
 .mapwrap{ display:flex; flex-direction:column; min-height:0; }
 .mapwrap img{ width:100%; flex:1 1 auto; min-height:0; object-fit:cover; border:1px solid var(--line-strong); }
 .mapcap{ font-family:var(--sans); font-size:11px; color:var(--muted); margin-top:8px;
   display:flex; justify-content:space-between; gap:10px; }
 .rel{ font-weight:700; } .rel.korkea{color:var(--green);} .rel.keski{color:var(--blue);} .rel.matala{color:var(--red);}
-.analysis{ display:flex; flex-direction:column; gap:20px; overflow:hidden; }
+.analysis{ display:flex; flex-direction:column; gap:14px; overflow:hidden; min-height:0; }
 .sec h4{ font-family:var(--sans); font-weight:700; font-size:13px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--navy); margin:0 0 12px; display:flex; align-items:center; gap:9px; }
+  text-transform:uppercase; color:var(--navy); margin:0 0 9px; display:flex; align-items:center; gap:9px; }
 .sec h4::before{ content:""; width:9px; height:9px; background:var(--red); display:inline-block; }
 .sec ul{ margin:0; padding:0; list-style:none; }
-.sec li{ font-size:14px; line-height:1.42; margin-bottom:9px; padding-left:18px; position:relative; color:var(--body); }
+.sec li{ font-size:13.5px; line-height:1.4; margin-bottom:7px; padding-left:18px; position:relative; color:var(--body); }
 .sec li::before{ content:"›"; position:absolute; left:0; color:var(--red); font-weight:700; }
 .sec li .ok{ color:var(--green); font-weight:700; } .sec li .warn{ color:var(--red); font-weight:700; }
 
@@ -162,3 +163,36 @@ table.src td.rel{ font-weight:700; }
 .merkinnat dt:first-child{ margin-top:0; }
 .merkinnat dd{ margin:3px 0 0; font-size:12.5px; line-height:1.4; color:var(--muted); }
 .merkinnat .swatch{ display:inline-block; width:10px; height:10px; margin-right:6px; vertical-align:middle; }
+
+/* ---------- PÄIVÄN YDIN ---------- */
+.ydinslide .lede{ flex:0 0 auto; font-family:var(--serif); font-size:23px; line-height:1.45;
+  color:var(--ink); margin:6px 0 22px; max-width:1090px; }
+.ydinslide .ykps{ flex:1 1 auto; min-height:0; display:flex; flex-direction:column; gap:15px; }
+.ykp{ display:grid; grid-template-columns:18px 1fr; gap:14px; align-items:start;
+  font-size:17px; line-height:1.42; color:var(--body); }
+.ykp .dot{ width:11px; height:11px; background:var(--red); margin-top:6px; }
+.ykp .warn{ color:var(--red); font-weight:700; }
+
+/* ---------- INDICATORS (trendinuolet) ---------- */
+.indicators{ flex:0 0 auto; display:flex; gap:18px; margin-top:10px; }
+.ind{ flex:1; background:#FBF8F1; border:1px solid var(--line); border-top:4px solid var(--navy);
+  padding:14px 18px; }
+.ind .l{ font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--muted); margin-bottom:9px; }
+.ind .v{ font-family:var(--serif); font-weight:700; font-size:27px; color:var(--ink); line-height:1; }
+.ind .d{ font-family:var(--sans); font-weight:700; font-size:14px; margin-top:8px; }
+.ind.up .d{ color:var(--green); } .ind.up{ border-top-color:var(--green); }
+.ind.down .d{ color:var(--red); } .ind.down{ border-top-color:var(--red); }
+.ind.flat .d{ color:var(--muted); }
+
+/* ---------- SYNTHESIS (per-dia johtopäätös) ---------- */
+.synthesis{ flex:0 0 auto; margin:10px 0 2px; background:var(--cream-2);
+  border-left:5px solid var(--red); padding:9px 16px; display:flex; gap:14px; align-items:baseline;
+  font-family:var(--serif); font-size:14px; line-height:1.4; color:var(--ink); }
+.synthesis .lbl{ font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--red); white-space:nowrap; }
+
+/* ---------- CHART panel (markkinat) ---------- */
+.trending.has-chart .cols{ grid-template-columns:1fr 430px; }
+.sidechart{ width:100%; border:1px solid var(--line-strong); margin-bottom:7px; }
+.chartcap{ font-family:var(--sans); font-size:11px; color:var(--muted); margin-bottom:16px; }

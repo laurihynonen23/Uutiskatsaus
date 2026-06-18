@@ -38,16 +38,22 @@ Rutiini (claude.ai/code) tekee joka aamu:
 | `template.js` | `data.json` → HTML |
 | `build.js` | `data.json` → `report.html` → PDF (Chrome/puppeteer) |
 | `render_map.py` | Karttaspeksi → PNG (OSM-tiilet + hallinta-alueet, kaupungit, rintamalinja) |
+| `render_chart.py` | Käyräspeksi → PNG (selkeä hinnanmuutoskäyrä, esim. öljy) |
 | `sample-data.json` | Kiinteä näytesisältö previewiä varten |
 | `fonts/` | Bundlatut woff2 (Playfair Display, Lora, Inter) — identtinen renderöinti kaikkialla |
 
-## Diarakenne (5–7 diaa)
+## Diarakenne (n. 8 diaa)
 
-Kansi · **Ukraina — rintamatilanne** (ainoa kartta; lähde Black Bird Group + ISW) ·
-Kansainvälinen politiikka · Turvallisuus ja puolustus · Suomi · Teknologia ja markkinat ·
-Lähteet ja luotettavuusarviot.
+Kansi · **Päivän ydin** (otsikko + lede + 3 pistettä + trendinuolet) ·
+**Ukraina — rintamatilanne** (ainoa kartta; lähde Black Bird Group + ISW) ·
+Kansainvälinen politiikka (sivupalkki = *Maailma lyhyesti* -tikkeri) · Turvallisuus ja puolustus ·
+Suomi · Teknologia ja markkinat (sivupalkki = *öljykäyrä*) · Lähteet ja luotettavuusarviot.
 
 Aihediat (`topics`) käyttävät samaa pohjaa: otsikko + nostot (3–5) + valinnainen sivupalkki.
+Jokaisella sisältödialla on alhaalla lyhyt **Johtopäätös** (`synthesis`).
+
+Lisäkentät datassa: `ydin` (päivän ydin + `indicators` trendinuolille), kunkin dian `synthesis`,
+ja `topics[].side.chart` (käyrä `render_chart.py`:llä, esim. `charts/oil.png`).
 
 ## Tyyli
 
