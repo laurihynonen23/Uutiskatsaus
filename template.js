@@ -97,9 +97,11 @@ function topic(d, t, n) {
   const cls = ["slide", "trending"];
   if (!t.side) cls.push("nosidebar");
   if (t.side && t.side.chart) cls.push("has-chart");
+  if (t.light) cls.push("light");
   return `<section class="${cls.join(" ")}">
     <div class="eyebrow">${esc(t.eyebrow)}</div>
     <h1 class="title">${esc(t.title)}</h1>
+    ${t.subtitle ? `<div class="subtitle">${esc(t.subtitle)}</div>` : ""}
     <div class="rule"></div>
     <div class="cols"><div class="feed">${items}</div>${side}</div>
     ${synth(t.synthesis)}
@@ -127,12 +129,13 @@ function sources(d, n) {
 }
 
 function renderHTML(d) {
-  d._total = 1 + (d.ydin ? 1 : 0) + 1 + d.topics.length + (d.sources ? 1 : 0);
+  d._total = 1 + (d.ydin ? 1 : 0) + 1 + d.topics.length + (d.kevyet ? 1 : 0) + (d.sources ? 1 : 0);
   let pn = 1; // kansi = sivu 1 (ei alatunnistetta)
   const slides = [cover(d)];
   if (d.ydin) slides.push(ydinSlide(d, ++pn));
   slides.push(ukraina(d, ++pn));
   d.topics.forEach((t) => slides.push(topic(d, t, ++pn)));
+  if (d.kevyet) slides.push(topic(d, { ...d.kevyet, light: true }, ++pn));
   if (d.sources) slides.push(sources(d, ++pn));
 
   return `<!doctype html><html lang="fi"><head><meta charset="utf-8">

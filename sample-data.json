@@ -128,6 +128,28 @@
       }
     }
   ],
+  "kevyet": {
+    "eyebrow": "Kevyesti · 24 h",
+    "title": "Maailma sivusilmällä",
+    "subtitle": "Viihdettä, kulttuuria ja kommelluksia – päivän kevyempi puoli.",
+    "items": [
+      { "h": "Eurovision-voitto kuumensi somea.", "p": "Voittajakappale keräsi YouTubessa miljoonia katselukertoja vuorokaudessa; vedonlyöjien ennakkosuosikki kaatui finaalin yleisöäänissä." },
+      { "h": "Hollywoodin neuvottelut katkesivat taas.", "p": "Studioiden ja käsikirjoittajien kiista siirsi useiden suurtuotantojen ensi-iltoja alustavasti kevääseen 2027 – kärsijöinä myös suoratoistopalvelut." },
+      { "h": "Ministerin avoin mikrofoni levisi X:ssä.", "p": "Eurooppalainen ministeri unohti mikrofonin päälle ja kommentoi kollegaansa suorassa lähetyksessä; klippi keräsi miljoonia katseluja vuorokaudessa." },
+      { "h": "Urheilukesä käynnistyi vauhdilla.", "p": "Jalkapallon EM-karsinnat ja yleisurheilun Timanttiliiga vetävät yleisöä; suomalaishyppääjä paransi kauden Euroopan-kärkitulosta." }
+    ],
+    "synthesis": "Kevyetkin uutiset kertovat ajasta: yhä useammin some ratkaisee, mikä jää mieleen – ei raati eikä asiantuntija.",
+    "side": {
+      "title": "Somessa puhuttaa",
+      "points": [
+        "TikTok: uusi tanssihaaste keräsi yli 2 mrd katselua viikossa.",
+        "Netflix: tosi-tv-dokumentti nousi 90 maan top 10:een.",
+        "Peliala: odotetun jättipelin julkaisu siirtyi jälleen.",
+        "Kuninkaalliset: hovin some-tili vaihtoi tyyliä, seuraajat innostuivat.",
+        "Urheilu: tähtipelaajan siirtohuhut hallitsevat otsikoita."
+      ]
+    }
+  },
   "sources": {
     "rows": [
       { "src": "Black Bird Group", "use": "Ukrainan rintamakartta", "rel": "Korkea", "relClass": "korkea" },
